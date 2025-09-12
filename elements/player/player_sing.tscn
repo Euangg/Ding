@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c5cxsqwbtmoxx"]
+[gd_scene load_steps=13 format=3 uid="uid://c5cxsqwbtmoxx"]
 
 [ext_resource type="PackedScene" uid="uid://ccfhkly2tsur7" path="res://elements/player/player.tscn" id="1_bjlvv"]
 [ext_resource type="Script" uid="uid://beului1cuskkp" path="res://elements/player/player_sing.gd" id="2_ogifs"]
@@ -205,6 +205,9 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_qsl30"]
 radius = 277.016
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3j47b"]
+size = Vector2(38, 20)
+
 [node name="PlayerSing" instance=ExtResource("1_bjlvv")]
 script = ExtResource("2_ogifs")
 
@@ -232,6 +235,10 @@ shape = SubResource("CircleShape2D_qsl30")
 [node name="TimerAtk" type="Timer" parent="." index="5"]
 wait_time = 0.1
 one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaHurt" index="0"]
+position = Vector2(-1, -10)
+shape = SubResource("RectangleShape2D_3j47b")
 
 [connection signal="body_entered" from="AreaDamage" to="." method="_on_area_damage_body_entered"]
 [connection signal="timeout" from="TimerAtk" to="." method="_on_timer_atk_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgg3hms7pb3iv"]
+[gd_scene load_steps=10 format=3 uid="uid://cgg3hms7pb3iv"]
 
 [ext_resource type="PackedScene" uid="uid://ccfhkly2tsur7" path="res://elements/player/player.tscn" id="1_oiar6"]
 [ext_resource type="Script" uid="uid://c102gsga6r4wc" path="res://elements/player/player_view.gd" id="2_o8xu2"]
@@ -72,6 +72,9 @@ _data = {
 &"walk": SubResource("Animation_5iyc5")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5iyc5"]
+size = Vector2(37, 20)
+
 [node name="PlayerView" instance=ExtResource("1_oiar6")]
 script = ExtResource("2_o8xu2")
 
@@ -93,6 +96,10 @@ script = ExtResource("4_5iyc5")
 libraries = {
 &"": SubResource("AnimationLibrary_ybl3g")
 }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaHurt" index="0"]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_5iyc5")
 
 [connection signal="body_entered" from="AreaView" to="." method="_on_area_view_body_entered"]
 [connection signal="body_exited" from="AreaView" to="." method="_on_area_view_body_exited"]

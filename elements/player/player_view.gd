@@ -5,8 +5,7 @@ var damage:float=10
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var area_view: Area2D = $AreaView
-@onready var collision_shape: CollisionPolygon2D = $AreaView/CollisionShape2D	
-
+@onready var collision_shape: CollisionPolygon2D = $AreaView/CollisionShape2D
 func control(delta:float):
 	collision_shape.rotation=(get_global_mouse_position()-global_position).angle()
 	queue_redraw()

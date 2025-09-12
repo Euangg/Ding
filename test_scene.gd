@@ -12,6 +12,6 @@ func _physics_process(delta: float) -> void:
 	camera.position=(player_view.position+player_sing.position)/2
 	
 	if Input.is_action_just_pressed("ui_accept"):
-		var e=Global.ENEMY_BIG_EYE.instantiate()
+		var e=Global.enemies.pick_random().instantiate()
 		add_child(e)
 		
