@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://gmnrfjnd6wf6"]
+[gd_scene load_steps=3 format=3 uid="uid://gmnrfjnd6wf6"]
+
+[ext_resource type="Script" uid="uid://cjm2j5qj574o2" path="res://elements/enemy/enemy.gd" id="1_ttpur"]
+[ext_resource type="Texture2D" uid="uid://dkqdjq5qtobu3" path="res://assets/enemy/big_eye.png" id="2_j4vrh"]
 
 [node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_ttpur")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1599)
+texture = ExtResource("2_j4vrh")

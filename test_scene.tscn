@@ -1,16 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmewsxcubu43p"]
+[gd_scene load_steps=6 format=3 uid="uid://bmewsxcubu43p"]
 
 [ext_resource type="Script" uid="uid://d4e1vpoq23qka" path="res://test_scene.gd" id="1_sasra"]
-[ext_resource type="PackedScene" uid="uid://cgg3hms7pb3iv" path="res://elements/player/player_1.tscn" id="2_ia1lp"]
-[ext_resource type="PackedScene" uid="uid://c5cxsqwbtmoxx" path="res://elements/player/player_2.tscn" id="2_sasra"]
+[ext_resource type="Texture2D" uid="uid://bpu3r4mmg5ee1" path="res://assets/scene/tile.png" id="2_coq8p"]
+[ext_resource type="PackedScene" uid="uid://cgg3hms7pb3iv" path="res://elements/player/player_view.tscn" id="2_ia1lp"]
+[ext_resource type="PackedScene" uid="uid://c5cxsqwbtmoxx" path="res://elements/player/player_sing.tscn" id="2_sasra"]
+[ext_resource type="PackedScene" uid="uid://js4ryiq1isxr" path="res://elements/enemy/enemy_big_eye.tscn" id="5_2nij2"]
 
 [node name="TestScene" type="Node2D"]
 script = ExtResource("1_sasra")
 
-[node name="Player1" parent="." instance=ExtResource("2_ia1lp")]
-position = Vector2(182, 268)
-
-[node name="Player2" parent="." instance=ExtResource("2_sasra")]
-position = Vector2(196, 333)
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -1213.0
+offset_top = -809.0
+offset_right = 2393.0
+offset_bottom = 1559.0
+texture = ExtResource("2_coq8p")
+stretch_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PlayerSing" parent="." instance=ExtResource("2_sasra")]
+position = Vector2(199, 106)
+
+[node name="PlayerView" parent="." instance=ExtResource("2_ia1lp")]
+position = Vector2(299, 214)
+
+[node name="EnemyBigEye" parent="." instance=ExtResource("5_2nij2")]
+position = Vector2(137, 184)

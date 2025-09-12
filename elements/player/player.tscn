@@ -1,64 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://ccfhkly2tsur7"]
+[gd_scene load_steps=3 format=3 uid="uid://ccfhkly2tsur7"]
 
-[ext_resource type="Texture2D" uid="uid://cx21ef1nfevuc" path="res://assets/Player.png" id="1_ktrpi"]
 [ext_resource type="Script" uid="uid://boryw4pbh3b4m" path="res://elements/player/player.gd" id="1_lh3fu"]
 
-[sub_resource type="Animation" id="Animation_338lt"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_lgvkd"]
-resource_name = "idle"
-
-[sub_resource type="Animation" id="Animation_b51c3"]
-resource_name = "walk"
-length = 0.4
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_h2kxm"]
-_data = {
-&"RESET": SubResource("Animation_338lt"),
-&"idle": SubResource("Animation_lgvkd"),
-&"walk": SubResource("Animation_b51c3")
-}
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ktrpi"]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_lh3fu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = -1.5708
+position = Vector2(-95, 21)
 scale = Vector2(2, 2)
-texture = ExtResource("1_ktrpi")
-hframes = 4
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_h2kxm")
-}
+texture = SubResource("CompressedTexture2D_ktrpi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
