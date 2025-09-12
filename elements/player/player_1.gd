@@ -1,6 +1,11 @@
 extends Player
 @onready var sprite: Sprite2D = $Sprite2D
 
+@onready var collision_shape: CollisionPolygon2D = $AreaView/CollisionShape2D
+
+func _draw() -> void:
+	draw_polygon(collision_shape.polygon,[Color.YELLOW])
+
 func control(delta:float):
 	rotation=(get_global_mouse_position()-global_position).angle()
 	

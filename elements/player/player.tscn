@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://3ax46stbjlsk"]
+[gd_scene load_steps=7 format=3 uid="uid://ccfhkly2tsur7"]
 
 [ext_resource type="Texture2D" uid="uid://cx21ef1nfevuc" path="res://assets/Player.png" id="1_ktrpi"]
 [ext_resource type="Script" uid="uid://boryw4pbh3b4m" path="res://elements/player/player.gd" id="1_lh3fu"]
@@ -50,6 +50,7 @@ _data = {
 script = ExtResource("1_lh3fu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.5708
 scale = Vector2(2, 2)
 texture = ExtResource("1_ktrpi")
 hframes = 4
@@ -60,3 +61,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AreaView" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="AreaView"]
