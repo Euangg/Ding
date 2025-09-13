@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4grrasilmhqx"
-path="res://.godot/imported/torch-scatter.png-a8967df7ae29aeb5cc6e7ed94fd0d8d1.ctex"
+uid="uid://dadeu4sls0qu4"
+path="res://.godot/imported/torch-fade.png-aa8426b535bce166c1a52ce54a0168ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/torch-scatter.png"
-dest_files=["res://.godot/imported/torch-scatter.png-a8967df7ae29aeb5cc6e7ed94fd0d8d1.ctex"]
+source_file="res://assets/light/torch-fade.png"
+dest_files=["res://.godot/imported/torch-fade.png-aa8426b535bce166c1a52ce54a0168ae.ctex"]
 
 [params]
 

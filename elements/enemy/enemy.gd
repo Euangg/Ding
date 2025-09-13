@@ -1,5 +1,6 @@
 class_name Enemy
 extends CharacterBody2D
+@export var id:Global.EnemyId=0
 
 var hp:float=100
 var target:Node2D

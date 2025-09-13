@@ -23,6 +23,7 @@ func on_dead():pass
 func on_respawn():pass
 
 func _on_area_hurt_body_entered(body: Node2D) -> void:
+	var e:Enemy=body
 	hp-=50
 	if hp<=0:
 		dead=true
@@ -30,6 +31,7 @@ func _on_area_hurt_body_entered(body: Node2D) -> void:
 		area_hurt.set_deferred("monitoring",false)
 		modulate.a=0.2
 		on_dead()
+		Global.last_kill_enemy_id=e.id
 	else:
 		timer_invincible.start()
 		area_hurt.set_deferred("monitoring",false)
