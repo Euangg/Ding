@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b271c57buhqhk"]
+
+[ext_resource type="PackedScene" uid="uid://gmnrfjnd6wf6" path="res://elements/enemy/enemy.tscn" id="1_2sqgt"]
+[ext_resource type="Texture2D" uid="uid://de611l20wjce4" path="res://assets/enemy/big_mouth.png" id="2_a2noq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2sqgt"]
+size = Vector2(108, 20)
+
+[node name="EnemyBigMouth" instance=ExtResource("1_2sqgt")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, -41)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_a2noq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_2sqgt")

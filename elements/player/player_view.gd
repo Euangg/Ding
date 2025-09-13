@@ -6,8 +6,12 @@ var damage:float=10
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var area_view: Area2D = $AreaView
 @onready var collision_shape: CollisionPolygon2D = $AreaView/CollisionShape2D
+@onready var point_light_2d: PointLight2D = $PointLight2D
+
 func control(delta:float):
-	collision_shape.rotation=(get_global_mouse_position()-global_position).angle()
+	var rot=(get_global_mouse_position()-global_position).angle()
+	collision_shape.rotation=rot
+	point_light_2d.rotation=rot
 	queue_redraw()
 	var vector_input=Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	velocity=speed*vector_input.normalized()

@@ -23,3 +23,6 @@ position = Vector2(137, 184)
 
 [node name="Node2D" parent="." instance=ExtResource("6_7cbxl")]
 y_sort_enabled = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.298039, 0.298039, 0.4, 1)

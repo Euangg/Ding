@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://dr640pnrvvemo"]
+[gd_scene load_steps=60 format=3 uid="uid://dr640pnrvvemo"]
 
 [ext_resource type="Texture2D" uid="uid://j7aecnjvl8ey" path="res://assets/sence/Sprite-0002.png" id="1_pkg7o"]
 [ext_resource type="Texture2D" uid="uid://d2r1y2ith4hpr" path="res://assets/brick_3.png" id="1_wse8f"]
@@ -123,7 +123,7 @@ size = Vector2(2755.73, 82)
 size = Vector2(861, 82)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wjb0r"]
-size = Vector2(1731.63, 82)
+size = Vector2(1731.63, 104)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_26xuy"]
 size = Vector2(4662.5, 82)
@@ -154,6 +154,9 @@ size = Vector2(128, 15916)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wse8f"]
 size = Vector2(14651, 134)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wse8f"]
+polygon = PackedVector2Array(-868, -555, -868, 542, 864, 542, 864, -558, 809, -558, 808, 438, -812, 438, -812, -555)
 
 [node name="Node2D" type="Node2D"]
 
@@ -620,7 +623,7 @@ position = Vector2(-6141, -11032)
 shape = SubResource("RectangleShape2D_il2jm")
 
 [node name="CollisionShape2D47" type="CollisionShape2D" parent="StaticBody2D9"]
-position = Vector2(-750.813, -10213)
+position = Vector2(-750.813, -10224)
 shape = SubResource("RectangleShape2D_wjb0r")
 
 [node name="CollisionShape2D48" type="CollisionShape2D" parent="StaticBody2D9"]
@@ -674,3 +677,6 @@ shape = SubResource("RectangleShape2D_wse8f")
 [node name="CollisionShape2D60" type="CollisionShape2D" parent="StaticBody2D9"]
 position = Vector2(-433.5, -15574)
 shape = SubResource("RectangleShape2D_wse8f")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_wse8f")
