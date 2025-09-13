@@ -8,24 +8,28 @@ var damgae_error:float=50
 func control(delta:float):
 	var vector_direction=Vector2.from_angle(rotation)
 	var vector_input=Input.get_vector("a","d","w","s")
-	velocity=speed*vector_input.normalized()
-	if velocity.is_zero_approx():animation_player.play("idle")
+	if dead:
+		velocity=speed*2*vector_input.normalized()
+		animation_player.play("RESET")
 	else:
-		if timer_atk.is_stopped():animation_player.play("walk")
-		#var diff=vector_direction.angle_to(vector_input)
-		#if is_zero_approx(diff):pass
-		#else:
-			#var amountTickRotate=sign(diff)*min(abs(diff),30*delta)
-			#rotate(amountTickRotate)
+		velocity=speed*vector_input.normalized()
+		if velocity.is_zero_approx():animation_player.play("idle")
+		else:
+			if timer_atk.is_stopped():animation_player.play("walk")
+			#var diff=vector_direction.angle_to(vector_input)
+			#if is_zero_approx(diff):pass
+			#else:
+				#var amountTickRotate=sign(diff)*min(abs(diff),30*delta)
+				#rotate(amountTickRotate)
+	
 	move_and_slide()
-	
-	if area_damage.monitoring:area_damage.monitoring=false
-	
-	
-	if Input.is_action_just_pressed("space"):
-		area_damage.monitoring=true
-		animation_player.play("atk")
-		timer_atk.start()
+	if dead:pass
+	else:
+		if area_damage.monitoring:area_damage.monitoring=false
+		if Input.is_action_just_pressed("space"):
+			area_damage.monitoring=true
+			animation_player.play("atk")
+			timer_atk.start()
 
 func _on_area_damage_body_entered(body: Node2D) -> void:
 	var e:Enemy=body

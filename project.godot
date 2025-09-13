@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Ding"
-run/main_scene="uid://bmewsxcubu43p"
+run/main_scene="uid://d240vmenul21x"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [autoload]
@@ -23,6 +23,10 @@ Global="*res://utils/global.tscn"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
+
+[gui]
+
+theme/custom_font="uid://b72q3htkn3gvn"
 
 [input]
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5cxsqwbtmoxx"]
+[gd_scene load_steps=15 format=3 uid="uid://c5cxsqwbtmoxx"]
 
 [ext_resource type="PackedScene" uid="uid://ccfhkly2tsur7" path="res://elements/player/player.tscn" id="1_bjlvv"]
 [ext_resource type="Script" uid="uid://beului1cuskkp" path="res://elements/player/player_sing.gd" id="2_ogifs"]
 [ext_resource type="Texture2D" uid="uid://dmrcaug7tfp7g" path="res://assets/character/sing.png" id="3_qsl30"]
 [ext_resource type="Texture2D" uid="uid://b75mfh5nlbp5b" path="res://assets/character/sing_idle.png" id="4_rj4jd"]
 [ext_resource type="Texture2D" uid="uid://lgbv4tdxgk1c" path="res://assets/character/sing_atk.png" id="5_3j47b"]
+[ext_resource type="Texture2D" uid="uid://msovp1timoy7" path="res://assets/light2.png" id="6_ou28q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ou28q"]
 size = Vector2(38, 20)
@@ -247,6 +248,11 @@ one_shot = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaHurt" index="0"]
 position = Vector2(-1, -10)
 shape = SubResource("RectangleShape2D_3j47b")
+
+[node name="PointLight2D2" type="PointLight2D" parent="." index="8"]
+position = Vector2(0, -77)
+energy = 0.5
+texture = ExtResource("6_ou28q")
 
 [connection signal="body_entered" from="AreaDamage" to="." method="_on_area_damage_body_entered"]
 [connection signal="timeout" from="TimerAtk" to="." method="_on_timer_atk_timeout"]

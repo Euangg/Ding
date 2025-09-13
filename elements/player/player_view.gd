@@ -12,16 +12,29 @@ func control(delta:float):
 	var rot=(get_global_mouse_position()-global_position).angle()
 	collision_shape.rotation=rot
 	point_light_2d.rotation=rot
-	queue_redraw()
+	#queue_redraw()
 	var vector_input=Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	velocity=speed*vector_input.normalized()
-	if velocity.is_zero_approx():animation_player.play("idle")
-	else:animation_player.play("walk")
+	if dead:
+		velocity=speed*2*vector_input.normalized()
+		animation_player.play("RESET")
+	else:
+		if velocity.is_zero_approx():animation_player.play("idle")
+		else:animation_player.play("walk")
 	move_and_slide()
 	
 	for e:Enemy in enemies_under_light:
 		e.hp-=damage*delta
 		if e.hp<=0:e.queue_free()
+
+func on_dead():
+	point_light_2d.enabled=false
+	area_view.monitoring=false
+	enemies_under_light.clear()
+func on_respawn():
+	point_light_2d.enabled=true
+	area_view.monitoring=true
+	
 
 func _on_area_view_body_entered(body: Node2D) -> void:
 	var e:Enemy=body
