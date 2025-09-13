@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=3 uid="uid://bh7vbi8yfyyru"]
+
+[ext_resource type="Texture2D" uid="uid://b3uewmuj26pgw" path="res://assets/ui/HUD.png" id="1_q3kxt"]
+[ext_resource type="Script" uid="uid://4crwf0tsp71s" path="res://utils/player_state.gd" id="1_wbfiu"]
+[ext_resource type="Texture2D" uid="uid://8pg5ccubidtt" path="res://assets/ui/head_pic.png" id="3_7g7bk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbfiu"]
+atlas = ExtResource("1_q3kxt")
+region = Rect2(307, 6, 58, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2iw1"]
+atlas = ExtResource("1_q3kxt")
+region = Rect2(308, 135, 56, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7g7bk"]
+atlas = ExtResource("1_q3kxt")
+region = Rect2(308, 39, 56, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uj2ui"]
+atlas = ExtResource("1_q3kxt")
+region = Rect2(308, 135, 56, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aduee"]
+atlas = ExtResource("1_q3kxt")
+region = Rect2(308, 71, 56, 2)
+
+[node name="PlayerState" type="CanvasLayer"]
+script = ExtResource("1_wbfiu")
+
+[node name="TextureProgressBarEased" type="TextureProgressBar" parent="."]
+offset_left = 34.0
+offset_top = 3.0
+offset_right = 92.0
+offset_bottom = 43.0
+step = 0.01
+value = 100.0
+texture_under = SubResource("AtlasTexture_wbfiu")
+texture_progress = SubResource("AtlasTexture_b2iw1")
+texture_progress_offset = Vector2(1, 1)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = 34.0
+offset_top = 3.0
+offset_right = 92.0
+offset_bottom = 43.0
+step = 0.01
+value = 100.0
+texture_under = SubResource("AtlasTexture_wbfiu")
+texture_progress = SubResource("AtlasTexture_7g7bk")
+texture_progress_offset = Vector2(1, 1)
+
+[node name="TextureProgressBarEased2" type="TextureProgressBar" parent="."]
+offset_left = 43.0
+offset_top = 30.0
+offset_right = 101.0
+offset_bottom = 70.0
+step = 0.01
+value = 100.0
+fill_mode = 1
+texture_under = SubResource("AtlasTexture_wbfiu")
+texture_progress = SubResource("AtlasTexture_uj2ui")
+texture_progress_offset = Vector2(1, 1)
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="."]
+offset_left = 43.0
+offset_top = 30.0
+offset_right = 101.0
+offset_bottom = 70.0
+step = 0.01
+value = 100.0
+fill_mode = 1
+texture_under = SubResource("AtlasTexture_wbfiu")
+texture_progress = SubResource("AtlasTexture_aduee")
+texture_progress_offset = Vector2(1, 1)
+
+[node name="HeadPic" type="Sprite2D" parent="."]
+position = Vector2(17, 21)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_7g7bk")
+region_enabled = true
+region_rect = Rect2(30, 26, 346, 417)
+
+[node name="HeadPic2" type="Sprite2D" parent="."]
+position = Vector2(118, 21)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_7g7bk")
+region_enabled = true
+region_rect = Rect2(422, 30, 345, 417)
