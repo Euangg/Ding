@@ -3,13 +3,12 @@ extends Player
 var damage_correct:float=90
 var damgae_error:float=50
 
-
 @onready var area_damage: Area2D = $AreaDamage
 @onready var timer_atk: Timer = $TimerAtk
 func control(delta:float):
 	var vector_direction=Vector2.from_angle(rotation)
 	var vector_input=Input.get_vector("a","d","w","s")
-	velocity=100*vector_input.normalized()
+	velocity=speed*vector_input.normalized()
 	if velocity.is_zero_approx():animation_player.play("idle")
 	else:
 		if timer_atk.is_stopped():animation_player.play("walk")

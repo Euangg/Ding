@@ -1,22 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmewsxcubu43p"]
+[gd_scene load_steps=6 format=3 uid="uid://bmewsxcubu43p"]
 
 [ext_resource type="Script" uid="uid://d4e1vpoq23qka" path="res://test_scene.gd" id="1_sasra"]
-[ext_resource type="Texture2D" uid="uid://bpu3r4mmg5ee1" path="res://assets/scene/tile.png" id="2_coq8p"]
 [ext_resource type="PackedScene" uid="uid://cgg3hms7pb3iv" path="res://elements/player/player_view.tscn" id="2_ia1lp"]
 [ext_resource type="PackedScene" uid="uid://c5cxsqwbtmoxx" path="res://elements/player/player_sing.tscn" id="2_sasra"]
 [ext_resource type="PackedScene" uid="uid://js4ryiq1isxr" path="res://elements/enemy/enemy_big_eye.tscn" id="5_2nij2"]
-[ext_resource type="Texture2D" uid="uid://bwxx3jksvqq21" path="res://assets/scene1.png" id="6_7cbxl"]
+[ext_resource type="PackedScene" uid="uid://dr640pnrvvemo" path="res://world.tscn" id="6_7cbxl"]
 
 [node name="TestScene" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_sasra")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -1213.0
-offset_top = -809.0
-offset_right = 2393.0
-offset_bottom = 1559.0
-texture = ExtResource("2_coq8p")
-stretch_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -29,6 +21,5 @@ position = Vector2(299, 214)
 [node name="EnemyBigEye" parent="." instance=ExtResource("5_2nij2")]
 position = Vector2(137, 184)
 
-[node name="Scene1" type="Sprite2D" parent="."]
-position = Vector2(597, 444)
-texture = ExtResource("6_7cbxl")
+[node name="Node2D" parent="." instance=ExtResource("6_7cbxl")]
+y_sort_enabled = true

@@ -1,10 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://c5cxsqwbtmoxx"]
+[gd_scene load_steps=14 format=3 uid="uid://c5cxsqwbtmoxx"]
 
 [ext_resource type="PackedScene" uid="uid://ccfhkly2tsur7" path="res://elements/player/player.tscn" id="1_bjlvv"]
 [ext_resource type="Script" uid="uid://beului1cuskkp" path="res://elements/player/player_sing.gd" id="2_ogifs"]
 [ext_resource type="Texture2D" uid="uid://dmrcaug7tfp7g" path="res://assets/character/sing.png" id="3_qsl30"]
 [ext_resource type="Texture2D" uid="uid://b75mfh5nlbp5b" path="res://assets/character/sing_idle.png" id="4_rj4jd"]
 [ext_resource type="Texture2D" uid="uid://lgbv4tdxgk1c" path="res://assets/character/sing_atk.png" id="5_3j47b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ou28q"]
+size = Vector2(38, 20)
 
 [sub_resource type="Animation" id="Animation_3j47b"]
 length = 0.001
@@ -209,12 +212,17 @@ radius = 277.016
 size = Vector2(38, 20)
 
 [node name="PlayerSing" instance=ExtResource("1_bjlvv")]
+collision_mask = 4
 script = ExtResource("2_ogifs")
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(2, -78)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_qsl30")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-1, -10)
+shape = SubResource("RectangleShape2D_ou28q")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
 libraries = {

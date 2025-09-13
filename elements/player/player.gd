@@ -4,6 +4,7 @@ extends CharacterBody2D
 var hp:float=100
 var restore:float=5
 var dead:bool=false
+var speed:float=500
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var timer_invincible: Timer = $TimerInvincible
