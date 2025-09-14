@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddhhmlgu8xerm"]
+
+[ext_resource type="PackedScene" uid="uid://bep8a50svsibw" path="res://elements/effect/effect.tscn" id="1_aat2s"]
+
+[node name="EffectFunc" instance=ExtResource("1_aat2s")]

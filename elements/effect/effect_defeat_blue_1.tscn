@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7hcryga64uyh"]
+
+[ext_resource type="PackedScene" uid="uid://bstkv2tasv5kf" path="res://elements/effect/effect_defeat.tscn" id="1_ogpkr"]
+
+[node name="EffectDefeatBlue2" instance=ExtResource("1_ogpkr")]

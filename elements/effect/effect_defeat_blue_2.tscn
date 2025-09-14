@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://x0qop6y31f56"]
+
+[ext_resource type="PackedScene" uid="uid://bstkv2tasv5kf" path="res://elements/effect/effect_defeat.tscn" id="1_ar8go"]
+
+[node name="EffectDefeatBlue2" instance=ExtResource("1_ar8go")]
+
+[node name="Sprite2D" parent="." index="0"]
+region_rect = Rect2(963, 1827, 539, 1242)

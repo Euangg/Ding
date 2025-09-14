@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://dr640pnrvvemo"]
+[gd_scene load_steps=71 format=3 uid="uid://dr640pnrvvemo"]
 
 [ext_resource type="Texture2D" uid="uid://j7aecnjvl8ey" path="res://assets/sence/Sprite-0002.png" id="1_pkg7o"]
 [ext_resource type="Texture2D" uid="uid://d2r1y2ith4hpr" path="res://assets/scene/brick_3.png" id="1_wse8f"]
@@ -18,6 +18,11 @@
 [ext_resource type="Texture2D" uid="uid://fvt56kivhl42" path="res://assets/scene/carpaet.png" id="17_udxuc"]
 [ext_resource type="PackedScene" uid="uid://7o7bevdmpmq8" path="res://elements/decoration/door.tscn" id="18_cbp6q"]
 [ext_resource type="Texture2D" uid="uid://cl8q3hac6lcty" path="res://assets/scene/gz.png" id="18_ikiii"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ikiii"]
+vertices = PackedVector2Array(7262, 5564, -6264, 5564, -6264, -4783, 7262, -4783)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-6274, -4793, 7272, -4793, 7272, 5574, -6274, 5574)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wukud"]
 size = Vector2(56, 1142)
@@ -163,6 +168,12 @@ size = Vector2(128, 15916)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wse8f"]
 size = Vector2(14651, 134)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5m4j"]
+size = Vector2(676, 271)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e77ka"]
+size = Vector2(32, 135)
+
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wse8f"]
 polygon = PackedVector2Array(-868, -555, -870, 518, 863, 518, 864, -558, 809, -558, 808, 438, -812, 438, -812, -555)
 
@@ -185,6 +196,11 @@ offset_right = 898.0
 offset_bottom = -3498.0
 texture = ExtResource("2_2o6r5")
 stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_ikiii")
 metadata/_edit_lock_ = true
 
 [node name="NodeWall" type="Node2D" parent="."]
@@ -699,6 +715,14 @@ shape = SubResource("RectangleShape2D_wse8f")
 [node name="CollisionShape2D60" type="CollisionShape2D" parent="StaticBody2D9"]
 position = Vector2(-433.5, -15574)
 shape = SubResource("RectangleShape2D_wse8f")
+
+[node name="CollisionShape2D61" type="CollisionShape2D" parent="StaticBody2D9"]
+position = Vector2(-747, -11026.5)
+shape = SubResource("RectangleShape2D_r5m4j")
+
+[node name="CollisionShape2D62" type="CollisionShape2D" parent="StaticBody2D9"]
+position = Vector2(-754, -10830.5)
+shape = SubResource("RectangleShape2D_e77ka")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_wse8f")

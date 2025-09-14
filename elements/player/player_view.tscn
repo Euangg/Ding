@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cgg3hms7pb3iv"]
+[gd_scene load_steps=18 format=3 uid="uid://cgg3hms7pb3iv"]
 
 [ext_resource type="PackedScene" uid="uid://ccfhkly2tsur7" path="res://elements/player/player.tscn" id="1_oiar6"]
 [ext_resource type="Script" uid="uid://c102gsga6r4wc" path="res://elements/player/player_view.gd" id="2_o8xu2"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://drslv8057t82f" path="res://assets/character/view_idle.png" id="5_ybl3g"]
 [ext_resource type="Texture2D" uid="uid://dadeu4sls0qu4" path="res://assets/light/torch-fade.png" id="6_72shw"]
 [ext_resource type="Texture2D" uid="uid://msovp1timoy7" path="res://assets/light/light2.png" id="7_72shw"]
+[ext_resource type="Texture2D" uid="uid://cml1i42cmucrl" path="res://assets/ui/fail2.png" id="8_6n2qv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybl3g"]
 size = Vector2(38, 20)
@@ -180,6 +181,44 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5iyc5"]
 size = Vector2(37, 20)
 
+[sub_resource type="Animation" id="Animation_fvpgq"]
+resource_name = "respawn"
+length = 1.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Fail2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2055, 1512), Vector2(1280, 693), Vector2(1280, 693), Vector2(1887, 1487)]
+}
+
+[sub_resource type="Animation" id="Animation_mde2x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Fail2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2055, 1512)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i1wba"]
+_data = {
+&"RESET": SubResource("Animation_mde2x"),
+&"respawn": SubResource("Animation_fvpgq")
+}
+
 [node name="PlayerView" instance=ExtResource("1_oiar6")]
 collision_mask = 4
 script = ExtResource("2_o8xu2")
@@ -220,9 +259,22 @@ offset = Vector2(175.827, 3.82059)
 texture_scale = 0.4
 
 [node name="PointLight2D2" type="PointLight2D" parent="." index="7"]
-position = Vector2(0, -38)
+position = Vector2(0, -39)
+scale = Vector2(1.5, 1.5)
 energy = 0.5
 texture = ExtResource("7_72shw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="9"]
+
+[node name="Fail2" type="Sprite2D" parent="CanvasLayer" index="0"]
+position = Vector2(2055, 1512)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_6n2qv")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="10"]
+libraries = {
+&"": SubResource("AnimationLibrary_i1wba")
+}
 
 [connection signal="body_entered" from="AreaView" to="." method="_on_area_view_body_entered"]
 [connection signal="body_exited" from="AreaView" to="." method="_on_area_view_body_exited"]

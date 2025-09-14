@@ -7,6 +7,7 @@ var damage:float=10
 @onready var area_view: Area2D = $AreaView
 @onready var collision_shape: CollisionPolygon2D = $AreaView/CollisionShape2D
 @onready var point_light_2d: PointLight2D = $PointLight2D
+@onready var animation_player_2: AnimationPlayer = $AnimationPlayer2
 
 func control(delta:float):
 	var rot=(get_global_mouse_position()-global_position).angle()
@@ -25,7 +26,7 @@ func control(delta:float):
 	
 	for e:Enemy in enemies_under_light:
 		e.hp-=damage*delta
-		if e.hp<=0:e.queue_free()
+		if e.hp<=0:e.die()
 
 func on_dead():
 	point_light_2d.enabled=false
@@ -34,6 +35,7 @@ func on_dead():
 func on_respawn():
 	point_light_2d.enabled=true
 	area_view.monitoring=true
+	animation_player_2.play("respawn")
 	
 
 func _on_area_view_body_entered(body: Node2D) -> void:
