@@ -9,6 +9,7 @@ size = Vector2(38, 58)
 [node name="EnemyBigEye" instance=ExtResource("1_hrobc")]
 script = ExtResource("2_xl5ac")
 id = 1
+speed = 200.0
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(4.76837e-07, 172)

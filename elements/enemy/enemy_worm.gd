@@ -29,5 +29,7 @@ func _physics_process(delta: float) -> void:
 		#a.position=get_local_mouse_position()
 		#Global.node_ammo.add_child(a)
 		#print(get_global_mouse_position())
-	
+	if light_accumulate>=20:
+		light_accumulate-=20
+		Global.play_sfx(Global.SFX_MONSTER_HURT)
 	move_and_slide()

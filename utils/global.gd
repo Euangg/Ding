@@ -37,6 +37,12 @@ const ENEMY_PIC_WORM = preload("res://elements/enemy/pic/enemy_pic_worm.tscn")
 var enemy_pics:Array=[ENEMY_PIC_BAT,ENEMY_PIC_BIG_EYE,ENEMY_PIC_BIG_MOUTH,ENEMY_PIC_FLOAT_HEAD,
 ENEMY_PIC_FROG,ENEMY_PIC_HAND_EYE,ENEMY_PIC_MAN_WOMAN,ENEMY_PIC_MOUTH,ENEMY_PIC_WORM]
 
+const EFFECT_DEFEAT_BLACK_1 = preload("res://elements/effect/effect_defeat_black_1.tscn")
+const EFFECT_DEFEAT_BLACK_2 = preload("res://elements/effect/effect_defeat_black_2.tscn")
+const EFFECT_DEFEAT_BLUE_1 = preload("res://elements/effect/effect_defeat_blue_1.tscn")
+const EFFECT_DEFEAT_BLUE_2 = preload("res://elements/effect/effect_defeat_blue_2.tscn")
+const EFFECT_DEFEAT_RED_1 = preload("res://elements/effect/effect_defeat_red_1.tscn")
+const EFFECT_DEFEAT_RED_2 = preload("res://elements/effect/effect_defeat_red_2.tscn")
 
 const UI_JUMP_SCARE = preload("res://scenes/ui_jump_scare.tscn")
 
@@ -44,8 +50,8 @@ const UI_JUMP_SCARE = preload("res://scenes/ui_jump_scare.tscn")
 const AMMO = preload("res://elements/projectile/Ammo.tscn")
 
 
-var player_view:Node2D
-var player_sing:Node2D
+var player_view:Player
+var player_sing:Player
 var players:Array
 var node_ammo:Node2D
 var node_effect:Node2D
@@ -60,6 +66,10 @@ const SFX_ATK_2 = preload("res://elements/sfx/sfx_atk_2.tscn")
 const SFX_ATK_3 = preload("res://elements/sfx/sfx_atk_3.tscn")
 const SFX_ATK_4 = preload("res://elements/sfx/sfx_atk_4.tscn")
 const SFX_ATK_5 = preload("res://elements/sfx/sfx_atk_5.tscn")
+const SFX_HUMAN_DEAD = preload("res://elements/sfx/sfx_human_dead.tscn")
+const SFX_HUMAN_HURT = preload("res://elements/sfx/sfx_human_hurt.tscn")
+const SFX_MONSTER_HURT = preload("res://elements/sfx/sfx_monster_hurt.tscn")
+const SFX_MONSTER_DEAD = preload("res://elements/sfx/sfx_monster_dead.tscn")
 func play_sfx(sfx:PackedScene):node_sfx.add_child(sfx.instantiate())
 
 const MUSIC_FAIL = preload("res://assets/music/fail.mp3")

@@ -21,6 +21,9 @@ func _physics_process(delta: float) -> void:
 				timer_impact.start()
 				is_impact=true
 			else:velocity=direction*speed
+	if light_accumulate>=20:
+		light_accumulate-=20
+		Global.play_sfx(Global.SFX_MONSTER_HURT)
 	move_and_slide()
 
 func _on_timer_impact_timeout() -> void:

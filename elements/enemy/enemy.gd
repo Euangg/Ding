@@ -8,6 +8,8 @@ extends CharacterBody2D
 var player_in_range:Array
 var live_player_in_range:Array
 var target:Player=null
+var dead:bool=false
+var light_accumulate:float
 @onready var navigation_agent_2d: NavigationAgent2D = $NavigationAgent2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
@@ -22,7 +24,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		var direction=to_local(navigation_agent_2d.get_next_path_position()).normalized()
 		velocity=direction*speed
-		
+	
+	if light_accumulate>=20:
+		light_accumulate-=20
+		Global.play_sfx(Global.SFX_MONSTER_HURT)
 	move_and_slide()
 
 
@@ -42,4 +47,8 @@ func _on_timer_check_timeout() -> void:
 
 
 func die()->void:
+	dead=true
 	animation_player.play("die")
+	var char=Global.EFFECT_DEFEAT_BLACK_1.instantiate()
+	char.position=position
+	Global.node_effect.add_child(char)

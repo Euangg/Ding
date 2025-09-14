@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmewsxcubu43p"]
+[gd_scene load_steps=8 format=3 uid="uid://bmewsxcubu43p"]
 
 [ext_resource type="Script" uid="uid://d4e1vpoq23qka" path="res://scenes/scene_play.gd" id="1_qs2yt"]
 [ext_resource type="PackedScene" uid="uid://c5cxsqwbtmoxx" path="res://elements/player/player_sing.tscn" id="2_6apec"]
 [ext_resource type="PackedScene" uid="uid://cgg3hms7pb3iv" path="res://elements/player/player_view.tscn" id="3_ifj7e"]
+[ext_resource type="PackedScene" uid="uid://js4ryiq1isxr" path="res://elements/enemy/enemy_big_eye.tscn" id="4_nw72c"]
 [ext_resource type="PackedScene" uid="uid://dr640pnrvvemo" path="res://world.tscn" id="5_g6kp8"]
 [ext_resource type="PackedScene" uid="uid://bh7vbi8yfyyru" path="res://utils/player_state.tscn" id="6_eibcc"]
 [ext_resource type="PackedScene" uid="uid://cukessl3tlctk" path="res://scenes/ui_fail.tscn" id="7_6apec"]
@@ -139,5 +140,8 @@ position = Vector2(-4937, -1233)
 
 [node name="Marker2D8" type="Marker2D" parent="NodeGenerationPoint"]
 position = Vector2(6829, 1800)
+
+[node name="EnemyBigEye" parent="." instance=ExtResource("4_nw72c")]
+position = Vector2(-658, 130)
 
 [connection signal="timeout" from="TimerGenerateEnemy" to="." method="_on_timer_generate_enemy_timeout"]

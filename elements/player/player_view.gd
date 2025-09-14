@@ -10,9 +10,15 @@ var damage:float=10
 @onready var animation_player_2: AnimationPlayer = $AnimationPlayer2
 
 func control(delta:float):
-	var rot=(get_global_mouse_position()-global_position).angle()
-	collision_shape.rotation=rot
-	point_light_2d.rotation=rot
+	if Input.is_action_pressed("mouse_left"):
+		if Global.player_sing:
+			var rot=(Global.player_sing.global_position-global_position).angle()
+			collision_shape.rotation=rot
+			point_light_2d.rotation=rot
+	else:
+		var rot=(get_global_mouse_position()-global_position).angle()
+		collision_shape.rotation=rot
+		point_light_2d.rotation=rot
 	#queue_redraw()
 	var vector_input=Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	velocity=speed*vector_input.normalized()
@@ -24,9 +30,16 @@ func control(delta:float):
 		else:animation_player.play("walk")
 	move_and_slide()
 	
+	if enemies_under_light.is_empty():is_atk=false
+	else:is_atk=true
 	for e:Enemy in enemies_under_light:
 		e.hp-=damage*delta
-		if e.hp<=0:e.die()
+		e.light_accumulate+=damage*delta
+		if e.hp<=0:
+			if e.dead:pass
+			else:Global.play_sfx(Global.SFX_MONSTER_DEAD)
+			e.dead=true	
+			e.die()
 
 func on_dead():
 	point_light_2d.enabled=false
@@ -36,7 +49,6 @@ func on_respawn():
 	point_light_2d.enabled=true
 	area_view.monitoring=true
 	animation_player_2.play("respawn")
-	
 
 func _on_area_view_body_entered(body: Node2D) -> void:
 	var e:Enemy=body

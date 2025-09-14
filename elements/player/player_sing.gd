@@ -2,12 +2,15 @@ extends Player
 
 var damage_correct:float=90
 var damgae_error:float=50
+var atk_stack:Array
+
 
 @onready var area_damage: Area2D = $AreaDamage
 @onready var timer_atk: Timer = $TimerAtk
 @onready var animation_player_2: AnimationPlayer = $AnimationPlayer2
 @onready var light_2: Sprite2D = $Light2
 @onready var animation_player_3: AnimationPlayer = $AnimationPlayer3
+@onready var timer_input_reset: Timer = $TimerInputReset
 
 func control(delta:float):
 	var vector_direction=Vector2.from_angle(rotation)
@@ -49,20 +52,31 @@ func control(delta:float):
 				Global.play_sfx(Global.SFX_ATK_5)
 			light_2.modulate.a=0.5
 			if atk_input:
+				atk_stack.push_back(atk_input)
+				if atk_stack.size()>5:atk_stack.pop_front()
+				timer_input_reset.start()
 				area_damage.monitoring=true
 				animation_player.play("atk")
 				animation_player_2.play("atk_effect")
 				timer_atk.start()
+				is_atk=true
 
 func _on_area_damage_body_entered(body: Node2D) -> void:
 	var e:Enemy=body
 	e.hp-=damage_correct
-	if e.hp<=0:e.die()
+	if e.hp<=0:
+		e.dead=true
+		e.die()
+		Global.play_sfx(Global.SFX_MONSTER_DEAD)
+	else:Global.play_sfx(Global.SFX_MONSTER_HURT)
 
 func _on_timer_atk_timeout() -> void:
 	if velocity.is_zero_approx():animation_player.play("idle")
 	else :animation_player.play("walk")
+	is_atk=false
 
-
+func _on_timer_input_reset_timeout() -> void:
+	atk_stack.clear()
+	
 func on_respawn():
 	animation_player_3.play("respawn")

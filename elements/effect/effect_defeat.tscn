@@ -83,6 +83,7 @@ _data = {
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
 position = Vector2(0, -246)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_lervy")
 region_enabled = true
 region_rect = Rect2(1095, 768, 278, 553)
@@ -91,3 +92,4 @@ region_rect = Rect2(1095, 768, 278, 553)
 libraries = {
 &"": SubResource("AnimationLibrary_i2oyo")
 }
+autoplay = "start"

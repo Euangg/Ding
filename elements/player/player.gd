@@ -4,17 +4,15 @@ extends CharacterBody2D
 var hp:float=100
 var restore:float=5
 var dead:bool=false
+var is_atk:bool=false
 
-@export var speed:float=100
+var speed:float=200
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var timer_invincible: Timer = $TimerInvincible
 @onready var timer_respawn: Timer = $TimerRespawn
 @onready var area_hurt: Area2D = $AreaHurt
 @onready var sfx_run: AudioStreamPlayer2D = $SfxRun
-
-func _ready() -> void:
-	pass
 
 func _physics_process(delta: float) -> void:
 	control(delta)
@@ -41,10 +39,12 @@ func _on_area_hurt_body_entered(body: Node2D) -> void:
 		modulate.a=0.2
 		on_dead()
 		Global.last_kill_enemy_id=e.id
+		Global.play_sfx(Global.SFX_HUMAN_DEAD)
 	else:
 		timer_invincible.start()
 		area_hurt.set_deferred("monitoring",false)
 		modulate.a=0.5
+		Global.play_sfx(Global.SFX_HUMAN_HURT)
 
 func _on_timer_invincible_timeout() -> void:
 	area_hurt.monitoring=true

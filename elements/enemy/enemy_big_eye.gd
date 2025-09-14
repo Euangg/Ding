@@ -11,5 +11,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		var direction=to_local(navigation_agent_2d.get_next_path_position()).normalized()
 		velocity=direction*speed
-		
+	if light_accumulate>=20:
+		light_accumulate-=20
+		Global.play_sfx(Global.SFX_MONSTER_HURT)
 	move_and_slide()

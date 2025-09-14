@@ -78,7 +78,7 @@ position = Vector2(17, 21)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_7g7bk")
 region_enabled = true
-region_rect = Rect2(30, 26, 346, 417)
+region_rect = Rect2(30, 485, 346, 417)
 
 [node name="HeadPic2" type="Sprite2D" parent="."]
 position = Vector2(118, 21)

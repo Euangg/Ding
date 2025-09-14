@@ -11,6 +11,7 @@ size = Vector2(108, 114)
 script = ExtResource("2_uyx2b")
 id = 2
 hp = 200.0
+speed = 200.0
 atk = 100.0
 
 [node name="Sprite2D" parent="." index="0"]

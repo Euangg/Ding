@@ -14,7 +14,9 @@ func _physics_process(delta: float) -> void:
 			if timer_charge.is_stopped():
 				velocity=Vector2.ZERO
 				timer_charge.start()
-			
+	if light_accumulate>=20:
+		light_accumulate-=20
+		Global.play_sfx(Global.SFX_MONSTER_HURT)	
 	move_and_slide()
 	
 	#print(velocity,",",target)

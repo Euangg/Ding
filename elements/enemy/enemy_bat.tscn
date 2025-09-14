@@ -10,7 +10,7 @@ size = Vector2(394, 56)
 [node name="EnemyBat" instance=ExtResource("1_27l2b")]
 script = ExtResource("2_tt1bq")
 hp = 50.0
-speed = 120.0
+speed = 180.0
 atk = 40.0
 
 [node name="Sprite2D" parent="." index="0"]

@@ -353,5 +353,10 @@ libraries = {
 &"": SubResource("AnimationLibrary_itthc")
 }
 
+[node name="TimerInputReset" type="Timer" parent="." index="15"]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="body_entered" from="AreaDamage" to="." method="_on_area_damage_body_entered"]
 [connection signal="timeout" from="TimerAtk" to="." method="_on_timer_atk_timeout"]
+[connection signal="timeout" from="TimerInputReset" to="." method="_on_timer_input_reset_timeout"]

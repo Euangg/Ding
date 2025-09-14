@@ -8,6 +8,7 @@ size = Vector2(142, 41)
 
 [node name="EnemyManWoman" instance=ExtResource("1_5itsc")]
 id = 6
+speed = 200.0
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(0, -472)
