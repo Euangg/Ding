@@ -28,7 +28,6 @@ y_sort_enabled = true
 [node name="NodeEffect" type="Node2D" parent="."]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.0392157, 0.0392157, 0.0392157, 1)
 
 [node name="PlayerState" parent="." instance=ExtResource("6_eibcc")]

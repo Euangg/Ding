@@ -31,6 +31,9 @@ func _ready() -> void:
 		add_child(e)
 
 func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("esc"):
+		get_tree().change_scene_to_file("res://scenes/scene_main.tscn")
+	
 	camera.position=(player_view.position+player_sing.position)/2
 	
 	if Input.is_action_just_pressed("t"):
