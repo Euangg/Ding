@@ -24,6 +24,11 @@ func _ready() -> void:
 	Global.node_effect=node_effect
 	Global.play_music(Global.MUSIC_PLAY)
 	fail_over.connect(show_fail_ui)
+	var points=node_generation_point.get_children()
+	for p in points:
+		var e:Enemy=Global.enemies.pick_random().instantiate()
+		e.position=p.position
+		add_child(e)
 
 func _physics_process(delta: float) -> void:
 	camera.position=(player_view.position+player_sing.position)/2
@@ -53,11 +58,11 @@ func show_fail_ui():
 	print("show_fail_ui")
 	ui_fail.visible=true
 
-
 func _on_timer_generate_enemy_timeout() -> void:
-	for i in round:
-		var mark=node_generation_point.get_children().pick_random()
-		var e:Enemy=Global.enemies.pick_random().instantiate()
-		e.position=mark.position
-		add_child(e)
-	round+=1
+	#for i in round:
+		#var mark=node_generation_point.get_children().pick_random()
+		#var e:Enemy=Global.enemies.pick_random().instantiate()
+		#e.position=mark.position
+		#add_child(e)
+	#round+=1
+	pass

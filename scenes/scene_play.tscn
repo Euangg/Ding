@@ -42,7 +42,7 @@ transform = Transform2D(4, 0, 0, 4, 0, 0)
 visible = false
 
 [node name="TimerGenerateEnemy" type="Timer" parent="."]
-wait_time = 60.0
+wait_time = 30.0
 autostart = true
 
 [node name="NodeGenerationPoint" type="Node" parent="."]
@@ -50,8 +50,77 @@ autostart = true
 [node name="Marker2D" type="Marker2D" parent="NodeGenerationPoint"]
 position = Vector2(-3158, 717)
 
+[node name="Marker2D9" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-5325, 2389)
+
 [node name="Marker2D2" type="Marker2D" parent="NodeGenerationPoint"]
 position = Vector2(287, -2776)
+
+[node name="Marker2D10" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-5271, -4120)
+
+[node name="Marker2D11" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-5065, -2928)
+
+[node name="Marker2D12" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-3559, -2246)
+
+[node name="Marker2D13" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(4071, -1761)
+
+[node name="Marker2D14" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(2498, -2613)
+
+[node name="Marker2D15" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(1494, -4199)
+
+[node name="Marker2D16" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(1440, 904)
+
+[node name="Marker2D17" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(2452, 2167)
+
+[node name="Marker2D18" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(2164, 3854)
+
+[node name="Marker2D19" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-6056, 4993)
+
+[node name="Marker2D20" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-4902, 5022)
+
+[node name="Marker2D21" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-5508, 4287)
+
+[node name="Marker2D22" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-2840, 5152)
+
+[node name="Marker2D23" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(1284, 5123)
+
+[node name="Marker2D24" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(5336, 5224)
+
+[node name="Marker2D25" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(3418, 3710)
+
+[node name="Marker2D26" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(5062, 3537)
+
+[node name="Marker2D27" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(6850, 3494)
+
+[node name="Marker2D28" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(6850, -3962)
+
+[node name="Marker2D29" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(5941, -530)
+
+[node name="Marker2D30" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(6893, -1280)
+
+[node name="Marker2D31" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-1259, -4137)
 
 [node name="Marker2D3" type="Marker2D" parent="NodeGenerationPoint"]
 position = Vector2(5832, -3249)
