@@ -26,8 +26,8 @@ Global="*res://utils/global.tscn"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/window_width_override=1280
-window/size/window_height_override=720
+window/size/window_width_override=1600
+window/size/window_height_override=900
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
@@ -100,10 +100,13 @@ esc={
 
 [layer_names]
 
-2d_physics/layer_1="player_collision"
-2d_physics/layer_2="Enemy"
-2d_physics/layer_3="environment_collision"
-2d_physics/layer_4="enemy_ammo"
+2d_physics/layer_1="environment_collision"
+2d_physics/layer_2="player_collision"
+2d_physics/layer_3="enemy_collision"
+2d_physics/layer_4="player_hurtbox"
+2d_physics/layer_5="player_hitox"
+2d_physics/layer_6="enemy_hurtbox"
+2d_physics/layer_7="enemy_hitbox"
 
 [rendering]
 

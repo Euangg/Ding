@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://eodwrdvp6yak"]
+
+[ext_resource type="Script" uid="uid://4sgojnmhr766" path="res://player/lens/player_lens.gd" id="1_5fm4t"]
+[ext_resource type="Texture2D" uid="uid://der7ierof0n1h" path="res://player/lens/lens_body.png" id="2_alobd"]
+[ext_resource type="Texture2D" uid="uid://dipeswipp1sa6" path="res://player/lens/lens_hand.png" id="3_d8kiq"]
+[ext_resource type="Texture2D" uid="uid://d0wljssagluum" path="res://player/lens/fire.png" id="4_i16f8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8hqx"]
+size = Vector2(60, 50)
+
+[node name="PlayerLens" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_5fm4t")
+
+[node name="Graphic" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Graphic"]
+position = Vector2(-1, -74)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_alobd")
+
+[node name="Gun" type="Node2D" parent="Graphic"]
+unique_name_in_owner = true
+position = Vector2(-9, -64)
+
+[node name="Sprite" type="Sprite2D" parent="Graphic/Gun"]
+position = Vector2(19, -6)
+rotation = -0.26309365
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_d8kiq")
+
+[node name="Fire" type="Sprite2D" parent="Graphic/Gun/Sprite"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(617.73755, 90.43286)
+rotation = 0.26309365
+scale = Vector2(6.6666665, 6.6666665)
+texture = ExtResource("4_i16f8")
+flip_h = true
+
+[node name="MarkerAim" type="Marker2D" parent="Graphic/Gun"]
+unique_name_in_owner = true
+position = Vector2(21.519459, -17.514267)
+
+[node name="MarkerFire" type="Marker2D" parent="Graphic/Gun"]
+unique_name_in_owner = true
+position = Vector2(74.519455, -17.514267)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -25)
+shape = SubResource("RectangleShape2D_c8hqx")
+
+[node name="TimerFire" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.05
+one_shot = true

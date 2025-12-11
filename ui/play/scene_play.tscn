@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://csresjl4ikdxf"]
+[gd_scene load_steps=12 format=3 uid="uid://csresjl4ikdxf"]
 
 [ext_resource type="Script" uid="uid://dylwipnntpk52" path="res://ui/play/scene_play.gd" id="1_pq2io"]
 [ext_resource type="Texture2D" uid="uid://16x0gga4vkuc" path="res://ui/play/ghost01.tres" id="3_5fae1"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://wto810c0siw2" path="res://ui/play/frame_light.png" id="4_dscmi"]
 [ext_resource type="Script" uid="uid://d3h678t2n8qap" path="res://ui/play/ghost.gd" id="4_em0sh"]
 [ext_resource type="Texture2D" uid="uid://clerqrx174y5u" path="res://ui/play/ghost02.tres" id="4_lphlo"]
-[ext_resource type="PackedScene" uid="uid://y5gn0yborfms" path="res://ui/play/hud_player_state.tscn" id="4_trsgt"]
 [ext_resource type="Texture2D" uid="uid://b32qy3dtr7jnc" path="res://ui/play/ghost03.tres" id="5_em0sh"]
 [ext_resource type="Texture2D" uid="uid://bk0df5nv772dh" path="res://ui/play/frame_filter.png" id="5_pq2io"]
 [ext_resource type="Texture2D" uid="uid://beq5lx6p0bm58" path="res://ui/play/ghost04.tres" id="6_j4jk4"]
@@ -21,19 +20,19 @@ script = ExtResource("1_pq2io")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="NodePlayers" type="Node2D" parent="."]
-unique_name_in_owner = true
-y_sort_enabled = true
-
 [node name="Level" type="Node2D" parent="."]
 unique_name_in_owner = true
 y_sort_enabled = true
 
-[node name="NodeAmmo" type="Node2D" parent="."]
+[node name="NodePlayers" type="Node2D" parent="."]
+unique_name_in_owner = true
+y_sort_enabled = true
 
-[node name="NodeEffect" type="Node2D" parent="."]
+[node name="NodeElements" type="Node2D" parent="."]
+unique_name_in_owner = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0.0392157, 0.0392157, 0.0392157, 1)
 
 [node name="NodeForScare" type="CanvasLayer" parent="."]
@@ -44,6 +43,7 @@ color = Color(0.0392157, 0.0392157, 0.0392157, 1)
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -112,17 +112,3 @@ scale = Vector2(0.6666667, 0.5630208)
 texture = ExtResource("5_pq2io")
 centered = false
 metadata/_edit_lock_ = true
-
-[node name="TimerGenerateEnemy" type="Timer" parent="."]
-wait_time = 30.0
-autostart = true
-
-[node name="HudPlayerState" parent="." instance=ExtResource("4_trsgt")]
-unique_name_in_owner = true
-layout_mode = 1
-offset_left = 1134.0
-offset_top = 562.0
-offset_right = 1134.0
-offset_bottom = 562.0
-
-[connection signal="timeout" from="TimerGenerateEnemy" to="." method="_on_timer_generate_enemy_timeout"]

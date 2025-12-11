@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0xxxwf6fo0lx"]
+
+[ext_resource type="Script" uid="uid://bucbw21by12q5" path="res://player/bell/player_bell.gd" id="1_ncxrv"]
+[ext_resource type="Texture2D" uid="uid://dmrcaug7tfp7g" path="res://old/player/sing.png" id="2_mfhir"]
+[ext_resource type="Texture2D" uid="uid://d0wljssagluum" path="res://player/lens/fire.png" id="3_r10qi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfhir"]
+size = Vector2(102, 76)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecp16"]
+size = Vector2(551, 254)
+
+[node name="PlayerBell" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_ncxrv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, -119)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_mfhir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -38)
+shape = SubResource("RectangleShape2D_mfhir")
+
+[node name="HitBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1, -109)
+collision_layer = 0
+collision_mask = 32
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+unique_name_in_owner = true
+position = Vector2(274.5, 0)
+shape = SubResource("RectangleShape2D_ecp16")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="HitBox"]
+unique_name_in_owner = true
+position = Vector2(275, -4)
+emitting = false
+amount = 80
+texture = ExtResource("3_r10qi")
+lifetime = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(250, 120)
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+angular_velocity_min = 500.0
+angular_velocity_max = 1000.0

@@ -19,6 +19,7 @@ const SFX_HUMAN_DEAD = preload("uid://d7q5gmoom7o7")
 const SFX_HUMAN_HURT = preload("uid://bui7g8rewm5x1")
 const SFX_MONSTER_DEAD = preload("uid://cluyct7nm6sse")
 const SFX_MONSTER_HURT = preload("uid://c2fxqmd8qtga0")
+const SFX_SHOOT = preload("uid://bww5o7ubuta1w")
 func play_sfx(sfx:PackedScene):%Sfx.add_child(sfx.instantiate())
 
 const MUSIC_FAIL = preload("uid://6qhqdheh1mkc")
@@ -28,9 +29,6 @@ func play_music(music:AudioStream):
 	%Bgm.stream=music
 	%Bgm.play()
 func _on_audio_stream_player_finished() -> void:%Bgm.play()
-
-const PLAYER_SING = preload("uid://c5cxsqwbtmoxx")
-const PLAYER_VIEW = preload("uid://cgg3hms7pb3iv")
 
 enum EnemyId{
 	BAT,
@@ -43,20 +41,6 @@ enum EnemyId{
 	TWO_MOUTH,
 	WORM
 }
-
-const ENEMY_BAT = preload("uid://buwh0bfare8gh")
-const ENEMY_BIG_EYE = preload("uid://js4ryiq1isxr")
-const ENEMY_BIG_MOUTH = preload("uid://b271c57buhqhk")
-const ENEMY_FLOAT_HEAD = preload("uid://dd6c7x4q7754a")
-const ENEMY_FROG = preload("uid://b4gy7t0qei81w")
-const ENEMY_HAND_EYE = preload("uid://iloeg25rrcny")
-const ENEMY_MAN_WOMAN = preload("uid://dcgpr0w8ifa18")
-const ENEMY_MOUTH = preload("uid://djxhqfyhhkff2")
-const ENEMY_WORM = preload("uid://by3yh8325fpdr")
-
-
-var enemies:Array=[ENEMY_BAT,ENEMY_BIG_EYE,ENEMY_BIG_MOUTH,ENEMY_FLOAT_HEAD,
-ENEMY_FROG,ENEMY_HAND_EYE,ENEMY_MAN_WOMAN,ENEMY_MOUTH,ENEMY_WORM]
 
 const ENEMY_PIC = preload("uid://cy1ble73e38u0")
 const ENEMY_PIC_BAT = preload("uid://bxluwg5e0celn")
@@ -84,7 +68,7 @@ const UI_JUMP_SCARE = preload("uid://18ugjk8ni5le")
 const AMMO = preload("res://elements/projectile/Ammo.tscn")
 
 
-var statement_num_player:int
+var mode_player:int
 var statement_selected_character:int
 
 var node_ammo:Node2D

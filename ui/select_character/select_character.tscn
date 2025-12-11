@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cm3g7buibyi17"]
 
-[ext_resource type="Texture2D" uid="uid://45prbq05qno" path="res://ui/character.png" id="1_1veuc"]
+[ext_resource type="Texture2D" uid="uid://45prbq05qno" path="res://ui/select_character/character.png" id="1_1veuc"]
 [ext_resource type="Script" uid="uid://plsnonhqiiqd" path="res://ui/select_character/select_character.gd" id="1_ypcwn"]
 
 [node name="SelectCharacter" type="Control"]

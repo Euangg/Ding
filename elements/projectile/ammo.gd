@@ -1,16 +1,21 @@
 extends Node2D
 
+var start_position:Vector2
 var velocity:Vector2
 
-func _draw() -> void:
-	draw_circle(position,10,Color.DARK_OLIVE_GREEN)
+func _ready() -> void:
+	%RayCast2D.position=start_position
 
 func _physics_process(delta: float) -> void:
-	position+=velocity*delta
+	if %RayCast2D.enabled:
+		%RayCast2D.target_position+=velocity*delta
+		var area:Area2D=%RayCast2D.get_collider()
+		if area:
+			var e:Enemy=area.get_parent()
+			e.add_hp(50,-50)
+			print(e.hp)
+			%RayCast2D.enabled=false
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is Player:
-		var p:Player=body
-		p.hp-=20
-		if p.hp<=0:Global.last_kill_enemy_id=Global.EnemyId.WORM
-	queue_free()
+
+func _on_timer_timeout() -> void:
+	%RayCast2D.enabled=false
