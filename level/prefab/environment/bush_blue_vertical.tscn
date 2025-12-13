@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch2brduiw4snk"]
+
+[ext_resource type="Texture2D" uid="uid://fhxl0hnvm1qt" path="res://level/prefab/environment/bush_blue_vertical.png" id="1_eo8eh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_emw23"]
+texture = ExtResource("1_eo8eh")
+texture_margin_top = 16.223272
+texture_margin_bottom = 25.0
+axis_stretch_vertical = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eo8eh"]
+size = Vector2(40, 74)
+
+[node name="BushBlueVertical" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -91.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_emw23")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Panel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/StaticBody2D"]
+position = Vector2(20, 54)
+shape = SubResource("RectangleShape2D_eo8eh")

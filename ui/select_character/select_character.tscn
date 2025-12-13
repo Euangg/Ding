@@ -30,25 +30,26 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="Button" type="Button" parent="ColorRect/VBoxContainer"]
-custom_minimum_size = Vector2(0, 480)
-layout_mode = 2
-
-[node name="Button2" type="Button" parent="ColorRect/VBoxContainer"]
+[node name="ButtonBell" type="Button" parent="ColorRect/VBoxContainer"]
 custom_minimum_size = Vector2(0, 580)
 layout_mode = 2
 
-[node name="Character" type="Sprite2D" parent="."]
-position = Vector2(1059, 248)
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect/VBoxContainer/ButtonBell"]
 texture = ExtResource("1_1veuc")
-region_enabled = true
-region_rect = Rect2(158, 313, 1523, 465)
-
-[node name="Character2" type="Sprite2D" parent="."]
-position = Vector2(826, 770)
-texture = ExtResource("1_1veuc")
+centered = false
 region_enabled = true
 region_rect = Rect2(44, 853, 1580, 560)
 
-[connection signal="pressed" from="ColorRect/VBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="ColorRect/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[node name="ButtonLens" type="Button" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 480)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect/VBoxContainer/ButtonLens"]
+position = Vector2(390, 0)
+texture = ExtResource("1_1veuc")
+centered = false
+region_enabled = true
+region_rect = Rect2(158, 313, 1523, 465)
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/ButtonBell" to="." method="_on_button_bell_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/ButtonLens" to="." method="_on_button_lens_pressed"]

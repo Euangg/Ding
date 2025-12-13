@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d2r1y2ith4hpr" path="res://assets/scene/brick_3.png" id="2_54g8f"]
 [ext_resource type="Texture2D" uid="uid://bjllujgsg2apo" path="res://assets/scene/blood.png" id="3_n6hp1"]
 [ext_resource type="Texture2D" uid="uid://fvt56kivhl42" path="res://assets/scene/carpaet.png" id="4_8pspb"]
-[ext_resource type="TileSet" uid="uid://7j1dfn8p38jq" path="res://level/tile/tile.tres" id="5_a420m"]
+[ext_resource type="TileSet" uid="uid://7j1dfn8p38jq" path="res://level/level_1_2/tile.tres" id="5_a420m"]
 [ext_resource type="PackedScene" uid="uid://cycwnn4q5eyba" path="res://level/prefab/light/light_candle.tscn" id="6_aq3t0"]
 [ext_resource type="PackedScene" uid="uid://72tq4uw8vp0u" path="res://level/prefab/teleportation.tscn" id="7_y0in4"]
 

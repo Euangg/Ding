@@ -67,9 +67,7 @@ const UI_JUMP_SCARE = preload("uid://18ugjk8ni5le")
 
 const AMMO = preload("res://elements/projectile/Ammo.tscn")
 
-
 var mode_player:int
-var statement_selected_character:int
 
 var node_ammo:Node2D
 var node_effect:Node2D

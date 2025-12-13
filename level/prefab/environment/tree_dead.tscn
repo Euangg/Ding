@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c15imxwk2c8ot"]
+
+[ext_resource type="Texture2D" uid="uid://cgivo0jv2nyga" path="res://level/prefab/environment/tree_dead.tres" id="1_vopjg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vopjg"]
+size = Vector2(37, 12)
+
+[node name="TreeDead" type="Node2D"]
+
+[node name="TreeDead" type="Sprite2D" parent="."]
+position = Vector2(0, -29)
+texture = ExtResource("1_vopjg")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(15.5, -6)
+shape = SubResource("RectangleShape2D_vopjg")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb0i11wgo762o"]
+
+[ext_resource type="Texture2D" uid="uid://cwiw01pfbcyvp" path="res://level/prefab/environment/stone_1.tres" id="1_k4cfy"]
+
+[node name="Stone1" type="Node2D"]
+
+[node name="Stone1" type="Sprite2D" parent="."]
+position = Vector2(0, -6)
+texture = ExtResource("1_k4cfy")

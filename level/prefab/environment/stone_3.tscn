@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw6q1a445hf4"]
+
+[ext_resource type="Texture2D" uid="uid://cb3yy8b1bqi02" path="res://level/prefab/environment/stone_3.tres" id="1_hch3d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hch3d"]
+size = Vector2(32, 6)
+
+[node name="Stone3" type="Node2D"]
+
+[node name="Stone3" type="Sprite2D" parent="."]
+position = Vector2(0, -8.5)
+texture = ExtResource("1_hch3d")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_hch3d")

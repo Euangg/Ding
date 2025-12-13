@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq81b4x71v4eu"]
+
+[ext_resource type="Texture2D" uid="uid://ddyuc7g4ckjev" path="res://level/prefab/environment/trunk_short.tres" id="1_hwjj4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7saif"]
+size = Vector2(62, 10)
+
+[node name="TrunkShort" type="Node2D"]
+
+[node name="TrunkShort" type="Sprite2D" parent="."]
+position = Vector2(0, -20)
+texture = ExtResource("1_hwjj4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_7saif")

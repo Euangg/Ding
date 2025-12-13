@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgpvupw32eg6c"]
+
+[ext_resource type="Texture2D" uid="uid://bivehqgetlfyh" path="res://level/prefab/environment/trunk_dead.tres" id="1_f5k7d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ilenc"]
+size = Vector2(74, 13)
+
+[node name="TrunkDead" type="Node2D"]
+
+[node name="TrunkDead" type="Sprite2D" parent="."]
+position = Vector2(0, -23.5)
+texture = ExtResource("1_f5k7d")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_ilenc")

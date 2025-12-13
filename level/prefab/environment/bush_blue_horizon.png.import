@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6m2ve6jrbicn"
-path="res://.godot/imported/tile_grass_land.png-9e2502b79937a6a261700fcf15408585.ctex"
+uid="uid://bo3chsqfi0ii1"
+path="res://.godot/imported/bush_blue_horizon.png-441914e6bc6ef2e55964fd6c3ae88987.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://level/level_1_1/tile_grass_land.png"
-dest_files=["res://.godot/imported/tile_grass_land.png-9e2502b79937a6a261700fcf15408585.ctex"]
+source_file="res://level/prefab/environment/bush_blue_horizon.png"
+dest_files=["res://.godot/imported/bush_blue_horizon.png-441914e6bc6ef2e55964fd6c3ae88987.ctex"]
 
 [params]
 

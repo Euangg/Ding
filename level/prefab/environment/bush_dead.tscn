@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://djcivwcrr5lr2"]
+
+[ext_resource type="Texture2D" uid="uid://bawjx86scmbs7" path="res://level/prefab/environment/bush_dead.tres" id="1_x6tft"]
+
+[node name="BushDead" type="Node2D"]
+
+[node name="BushDead" type="Sprite2D" parent="."]
+position = Vector2(0, -11.5)
+texture = ExtResource("1_x6tft")

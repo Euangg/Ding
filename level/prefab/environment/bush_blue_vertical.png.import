@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp7x0m0dy4fjl"
-path="res://.godot/imported/brick.png-86da374fa56386c9a06f3f98a77e28b0.ctex"
+uid="uid://fhxl0hnvm1qt"
+path="res://.godot/imported/bush_blue_vertical.png-c7c92cf36a8957cb928fe45981131283.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://level/tile/brick.png"
-dest_files=["res://.godot/imported/brick.png-86da374fa56386c9a06f3f98a77e28b0.ctex"]
+source_file="res://level/prefab/environment/bush_blue_vertical.png"
+dest_files=["res://.godot/imported/bush_blue_vertical.png-c7c92cf36a8957cb928fe45981131283.ctex"]
 
 [params]
 

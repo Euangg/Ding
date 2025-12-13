@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctfxgg6f5usac"]
+
+[ext_resource type="Texture2D" uid="uid://k3eqcwa2rlih" path="res://level/prefab/environment/vine_green.tres" id="1_1c3n5"]
+
+[node name="VineGreen" type="Node2D"]
+
+[node name="VineGreen" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("1_1c3n5")

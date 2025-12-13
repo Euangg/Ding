@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://d03qwqeyqy8yq"]
+
+[ext_resource type="Texture2D" uid="uid://waploptag7xs" path="res://level/prefab/environment/bush_green_horizon.png" id="1_ggpeu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i68j6"]
+texture = ExtResource("1_ggpeu")
+texture_margin_left = 16.0
+texture_margin_right = 16.0
+axis_stretch_horizontal = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggpeu"]
+size = Vector2(190, 20)
+
+[node name="BushGreenHorizon" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.5
+offset_top = -49.0
+offset_right = 96.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_i68j6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Panel"]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/StaticBody2D"]
+position = Vector2(96.5, 39)
+shape = SubResource("RectangleShape2D_ggpeu")
