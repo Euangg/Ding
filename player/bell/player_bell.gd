@@ -21,4 +21,8 @@ func _physics_process(delta: float) -> void:
 	
 	if %HitBox.monitoring:velocity=Vector2.ZERO
 	else:velocity=vector_input.normalized()*speed
+	
+	if velocity.is_zero_approx():%AnimationPlayer.play("idle")
+	else:%AnimationPlayer.play("walk")
+	
 	move_and_slide()

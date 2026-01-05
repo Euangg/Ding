@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://kemeum84sb52"]
+
+[ext_resource type="Script" uid="uid://ce1s0i2a8pq1w" path="res://level/level_1_1_new/level_1_1_new.gd" id="1_3hcpr"]
+[ext_resource type="Texture2D" uid="uid://swtwni1icf3e" path="res://level/level_1_1_new/1-1.png" id="1_abbh8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abbh8"]
+size = Vector2(4870.25, 537)
+
+[node name="Level11New" type="Node2D"]
+script = ExtResource("1_3hcpr")
+
+[node name="11" type="Sprite2D" parent="."]
+texture = ExtResource("1_abbh8")
+centered = false
+
+[node name="EnterPoint" type="Node" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="EnterPoint"]
+position = Vector2(112, 3766)
+
+[node name="Marker2D2" type="Marker2D" parent="EnterPoint"]
+position = Vector2(107, 3692)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2405, 3376)
+shape = SubResource("RectangleShape2D_abbh8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2388.875, 4077)
+shape = SubResource("RectangleShape2D_abbh8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(1029, 0)
+polygon = PackedVector2Array(4339, 3283, 4162, 3460, 3811, 3624, 3806, 3121)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(1884, 600)
+polygon = PackedVector2Array(3436, 2879, 3698, 2648, 3670, 3104, 2945, 3210, 2921, 3172)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(967, -94)
+polygon = PackedVector2Array(4612, 3331, 3826, 3097, -412, 3036, -732, 2792, 583, 2054, 4697, 2026)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(967, -94)
+polygon = PackedVector2Array(-494, 3183, -928, 2943, -942, 2747, 475, 1940, 2238, 1915, 2750, 1393, 4679, 1376, 4691, 2019, 4744, 1027, -971, 510, -969, 3131)

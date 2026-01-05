@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://gmnrfjnd6wf6"]
+[gd_scene load_steps=7 format=3 uid="uid://gmnrfjnd6wf6"]
 
 [ext_resource type="Texture2D" uid="uid://bwuwyv2g4p378" path="res://enemy/enemy_bat/enemy_bat.png" id="2_88xms"]
 [ext_resource type="Script" uid="uid://cib3tkstwwogy" path="res://enemy/enemy_bat/enemy_bat.gd" id="2_tt1bq"]
@@ -55,6 +55,9 @@ _data = {
 &"die": SubResource("Animation_j4vrh")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_j3621"]
+radius = 400.0
+
 [node name="EnemyBat" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 0
@@ -78,3 +81,12 @@ collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HurtBox"]
 polygon = PackedVector2Array(-92, -85, -1, -41, 93, -85, 90, 83, 12, 14, -12, 14, -91, 84)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_j3621")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

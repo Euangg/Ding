@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://csresjl4ikdxf"]
+[gd_scene load_steps=14 format=3 uid="uid://csresjl4ikdxf"]
 
 [ext_resource type="Script" uid="uid://dylwipnntpk52" path="res://ui/play/scene_play.gd" id="1_pq2io"]
+[ext_resource type="Shader" uid="uid://cegniv2v06fie" path="res://ui/play/glitech.gdshader" id="2_lphlo"]
 [ext_resource type="Texture2D" uid="uid://16x0gga4vkuc" path="res://ui/play/ghost01.tres" id="3_5fae1"]
 [ext_resource type="Texture2D" uid="uid://d108p84d5nra6" path="res://ui/play/frame.png" id="3_trsgt"]
 [ext_resource type="Texture2D" uid="uid://wto810c0siw2" path="res://ui/play/frame_light.png" id="4_dscmi"]
@@ -11,6 +12,17 @@
 [ext_resource type="Texture2D" uid="uid://beq5lx6p0bm58" path="res://ui/play/ghost04.tres" id="6_j4jk4"]
 [ext_resource type="PackedScene" uid="uid://cukessl3tlctk" path="res://ui/play/ui_fail.tscn" id="7_6apec"]
 [ext_resource type="Texture2D" uid="uid://b27f4m82gaeth" path="res://ui/play/frame_flicker.png" id="7_tcohp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lphlo"]
+shader = ExtResource("2_lphlo")
+shader_parameter/intensity = 0.3710000176225
+shader_parameter/speed = 4.070000193325
+shader_parameter/rgb_split_intensity = 0.08400000399
+shader_parameter/enable_rgb_split = true
+shader_parameter/block_size = 7.5190002621525
+shader_parameter/block_intensity = 0.0430000020425
+shader_parameter/line_speed = 8.4910004033225
+shader_parameter/line_intensity = 0.0430000020425
 
 [node name="ScenePlay" type="Control"]
 y_sort_enabled = true
@@ -34,6 +46,17 @@ unique_name_in_owner = true
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
 color = Color(0.19607843, 0.19607843, 0.19607843, 0.8901961)
+
+[node name="Glitch" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Glitch"]
+material = SubResource("ShaderMaterial_lphlo")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="NodeForScare" type="CanvasLayer" parent="."]
 

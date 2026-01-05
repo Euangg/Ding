@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://l0oqoa6hiqu8"]
+[gd_scene load_steps=7 format=4 uid="uid://l0oqoa6hiqu8"]
 
 [ext_resource type="Script" uid="uid://bhr6g5yggs5bo" path="res://test.gd" id="1_6uqi0"]
 [ext_resource type="PackedScene" uid="uid://c0xxxwf6fo0lx" path="res://player/bell/player_bell.tscn" id="1_37kl0"]
 [ext_resource type="PackedScene" uid="uid://eodwrdvp6yak" path="res://player/lens/player_lens.tscn" id="2_8uh7m"]
 [ext_resource type="TileSet" uid="uid://cx07odrrgxm86" path="res://level/level_1_1/tile.tres" id="2_ppyta"]
+[ext_resource type="PackedScene" uid="uid://gmnrfjnd6wf6" path="res://enemy/enemy_bat/enemy_bat.tscn" id="5_ykrsh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8uh7m"]
 size = Vector2(2046, 170)
@@ -19,6 +20,7 @@ tile_set = ExtResource("2_ppyta")
 position = Vector2(766, 532)
 
 [node name="PlayerLens" parent="." instance=ExtResource("2_8uh7m")]
+unique_name_in_owner = true
 position = Vector2(842, 712)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -35,5 +37,8 @@ shape = SubResource("RectangleShape2D_8uh7m")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="EnemyBat" parent="." instance=ExtResource("5_ykrsh")]
+position = Vector2(1422, 633)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

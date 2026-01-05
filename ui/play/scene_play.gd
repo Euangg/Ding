@@ -18,6 +18,7 @@ var dict_level={
 	"level_1_1":preload("uid://b6g84lv670ubp"),
 	"level_1_2":preload("uid://ine5ls1mg6cq"),
 	"level_2_1":preload("uid://bl8x41hl8y1tu"),
+	"level_1_1_new":preload("uid://kemeum84sb52")
 }
 func switch_level(str_level:String):
 	var old_level:Array=%Level.get_children()
@@ -42,7 +43,7 @@ func _ready() -> void:
 		player_lens.node_ammo=%NodeElements
 	#%HudPlayerState.set_players(player_bell,player_lens)
 	
-	switch_level("level_1_1")
+	switch_level("level_1_1_new")
 	
 	Global.play_music(Global.MUSIC_PLAY)
 	fail_over.connect(show_fail_ui)
