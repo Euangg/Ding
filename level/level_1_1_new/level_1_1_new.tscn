@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://kemeum84sb52"]
+[gd_scene load_steps=6 format=3 uid="uid://kemeum84sb52"]
 
 [ext_resource type="Script" uid="uid://ce1s0i2a8pq1w" path="res://level/level_1_1_new/level_1_1_new.gd" id="1_3hcpr"]
 [ext_resource type="Texture2D" uid="uid://swtwni1icf3e" path="res://level/level_1_1_new/1-1.png" id="1_abbh8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_abbh8"]
 size = Vector2(4870.25, 537)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hcpr"]
+size = Vector2(164.5, 411)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sj3ly"]
+size = Vector2(164.5, 1353)
 
 [node name="Level11New" type="Node2D"]
 script = ExtResource("1_3hcpr")
@@ -46,4 +52,49 @@ polygon = PackedVector2Array(4612, 3331, 3826, 3097, -412, 3036, -732, 2792, 583
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(967, -94)
-polygon = PackedVector2Array(-494, 3183, -928, 2943, -942, 2747, 475, 1940, 2238, 1915, 2750, 1393, 4679, 1376, 4691, 2019, 4744, 1027, -971, 510, -969, 3131)
+polygon = PackedVector2Array(-470, 3203, -886, 2917, -942, 2747, 475, 1940, 2238, 1915, 2750, 1393, 4679, 1376, 4689, 2043, 4744, 1027, -971, 510, -969, 3131)
+
+[node name="AreaStart" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaStart"]
+position = Vector2(1440.75, 3708)
+shape = SubResource("RectangleShape2D_3hcpr")
+
+[node name="AreaEnd" type="Area2D" parent="."]
+position = Vector2(1580, -1838)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaEnd"]
+position = Vector2(1440.75, 3708)
+shape = SubResource("RectangleShape2D_3hcpr")
+
+[node name="AreaBoss" type="Area2D" parent="."]
+position = Vector2(2712, -2066)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBoss"]
+position = Vector2(1981, 3655)
+shape = SubResource("RectangleShape2D_sj3ly")
+
+[node name="TimerBat" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[node name="NodeEnemy" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="MarkerBossSpawn" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(5997, 1088)
+
+[node name="MarkerBossTarget" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(5247, 1589)
+
+[connection signal="body_entered" from="AreaStart" to="." method="_on_area_start_body_entered"]
+[connection signal="body_entered" from="AreaEnd" to="." method="_on_area_end_body_entered"]
+[connection signal="body_entered" from="AreaBoss" to="." method="_on_area_boss_body_entered"]
+[connection signal="timeout" from="TimerBat" to="." method="_on_timer_timeout"]

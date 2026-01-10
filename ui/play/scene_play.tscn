@@ -1,17 +1,20 @@
-[gd_scene load_steps=14 format=3 uid="uid://csresjl4ikdxf"]
+[gd_scene load_steps=18 format=3 uid="uid://csresjl4ikdxf"]
 
 [ext_resource type="Script" uid="uid://dylwipnntpk52" path="res://ui/play/scene_play.gd" id="1_pq2io"]
 [ext_resource type="Shader" uid="uid://cegniv2v06fie" path="res://ui/play/glitech.gdshader" id="2_lphlo"]
+[ext_resource type="PackedScene" uid="uid://b6g84lv670ubp" path="res://level/level_1_1/level_1_1.tscn" id="2_tcohp"]
 [ext_resource type="Texture2D" uid="uid://16x0gga4vkuc" path="res://ui/play/ghost01.tres" id="3_5fae1"]
 [ext_resource type="Texture2D" uid="uid://d108p84d5nra6" path="res://ui/play/frame.png" id="3_trsgt"]
 [ext_resource type="Texture2D" uid="uid://wto810c0siw2" path="res://ui/play/frame_light.png" id="4_dscmi"]
 [ext_resource type="Script" uid="uid://d3h678t2n8qap" path="res://ui/play/ghost.gd" id="4_em0sh"]
+[ext_resource type="Shader" uid="uid://dxarpaqvj0sfj" path="res://ui/play/crt.gdshader" id="4_hgx43"]
 [ext_resource type="Texture2D" uid="uid://clerqrx174y5u" path="res://ui/play/ghost02.tres" id="4_lphlo"]
 [ext_resource type="Texture2D" uid="uid://b32qy3dtr7jnc" path="res://ui/play/ghost03.tres" id="5_em0sh"]
 [ext_resource type="Texture2D" uid="uid://bk0df5nv772dh" path="res://ui/play/frame_filter.png" id="5_pq2io"]
 [ext_resource type="Texture2D" uid="uid://beq5lx6p0bm58" path="res://ui/play/ghost04.tres" id="6_j4jk4"]
 [ext_resource type="PackedScene" uid="uid://cukessl3tlctk" path="res://ui/play/ui_fail.tscn" id="7_6apec"]
 [ext_resource type="Texture2D" uid="uid://b27f4m82gaeth" path="res://ui/play/frame_flicker.png" id="7_tcohp"]
+[ext_resource type="PackedScene" uid="uid://y5gn0yborfms" path="res://ui/play/hud/hud_player_state.tscn" id="12_em0sh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lphlo"]
 shader = ExtResource("2_lphlo")
@@ -24,17 +27,45 @@ shader_parameter/block_intensity = 0.0430000020425
 shader_parameter/line_speed = 8.4910004033225
 shader_parameter/line_intensity = 0.0430000020425
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eu3tx"]
+shader = ExtResource("4_hgx43")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(160, 90)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.2510000119225
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.0
+shader_parameter/aberration = 4.7499999933364734e-08
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = true
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
 [node name="ScenePlay" type="Control"]
 y_sort_enabled = true
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_pq2io")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera" type="Camera2D" parent="."]
+unique_name_in_owner = true
 
 [node name="Level" type="Node2D" parent="."]
 unique_name_in_owner = true
 y_sort_enabled = true
+
+[node name="Level11" parent="Level" instance=ExtResource("2_tcohp")]
+position = Vector2(-1896, -77)
 
 [node name="NodePlayers" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -47,11 +78,19 @@ unique_name_in_owner = true
 visible = false
 color = Color(0.19607843, 0.19607843, 0.19607843, 0.8901961)
 
-[node name="Glitch" type="CanvasLayer" parent="."]
-visible = false
+[node name="Cover" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="Glitch"]
+[node name="Glitch" type="ColorRect" parent="Cover"]
+visible = false
 material = SubResource("ShaderMaterial_lphlo")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CRT" type="ColorRect" parent="Cover"]
+material = SubResource("ShaderMaterial_eu3tx")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -62,10 +101,8 @@ grow_vertical = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="UiFail" parent="CanvasLayer" instance=ExtResource("7_6apec")]
-visible = false
-
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -127,6 +164,7 @@ texture = ExtResource("4_dscmi")
 metadata/_edit_lock_ = true
 
 [node name="FrameFilter" type="Sprite2D" parent="CanvasLayer/ColorRect"]
+visible = false
 modulate = Color(0.8666667, 1, 1, 0.90588236)
 z_index = -1
 z_as_relative = false
@@ -134,3 +172,11 @@ scale = Vector2(0.6666667, 0.5630208)
 texture = ExtResource("5_pq2io")
 centered = false
 metadata/_edit_lock_ = true
+
+[node name="HudPlayerState" parent="CanvasLayer" instance=ExtResource("12_em0sh")]
+unique_name_in_owner = true
+
+[node name="UiFail" parent="CanvasLayer" instance=ExtResource("7_6apec")]
+visible = false
+
+[connection signal="game_over" from="." to="." method="on_game_over"]

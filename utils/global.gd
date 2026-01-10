@@ -8,7 +8,7 @@ const SCENE_STAFF = preload("uid://b7fhlpox4xl8h")
 const SCENE_SETTINGS = preload("uid://bssclqieuko1d")
 const SCENE_PASS = preload("uid://bn4yccmfxnyro")
 func switch_scene(packed_scene:PackedScene):
-	get_tree().call_deferred("change_scene_to_packed",packed_scene)
+	get_tree().change_scene_to_packed(packed_scene)
 
 const SFX_ATK_1 = preload("uid://cejb4dowqril")
 const SFX_ATK_2 = preload("uid://uierf60waarl")
@@ -71,6 +71,9 @@ var mode_player:int
 
 var node_ammo:Node2D
 var node_effect:Node2D
-var player_sing:Player
+var node_players:Node2D
+var player_bell:Player
+var player_lens:Player
+var camera:Camera2D
 
 var last_kill_enemy_id

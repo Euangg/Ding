@@ -1,20 +1,23 @@
-[gd_scene load_steps=9 format=3 uid="uid://eodwrdvp6yak"]
+[gd_scene load_steps=10 format=3 uid="uid://eodwrdvp6yak"]
 
 [ext_resource type="Script" uid="uid://4sgojnmhr766" path="res://player/lens/player_lens.gd" id="1_5fm4t"]
+[ext_resource type="Shader" uid="uid://yyurgsr524c2" path="res://player/outline.gdshader" id="2_0mpv2"]
 [ext_resource type="Texture2D" uid="uid://der7ierof0n1h" path="res://player/lens/lens_body.png" id="2_alobd"]
 [ext_resource type="Texture2D" uid="uid://dipeswipp1sa6" path="res://player/lens/lens_hand.png" id="3_d8kiq"]
 [ext_resource type="Texture2D" uid="uid://d0wljssagluum" path="res://player/lens/fire.png" id="4_i16f8"]
-[ext_resource type="Shader" uid="uid://bbt8dvjg6xnvi" path="res://player/lens/lens.gdshader" id="5_0mpv2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_buu0c"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0mpv2"]
-shader = ExtResource("5_0mpv2")
+shader = ExtResource("2_0mpv2")
 shader_parameter/outline_width = 20.0
 shader_parameter/outline_color = Color(0, 0, 1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8hqx"]
 size = Vector2(40, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0mpv2"]
+size = Vector2(58, 140)
 
 [node name="PlayerLens" type="CharacterBody2D"]
 collision_layer = 2
@@ -61,7 +64,20 @@ position = Vector2(74.519455, -17.514267)
 position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_c8hqx")
 
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -70)
+shape = SubResource("RectangleShape2D_0mpv2")
+
 [node name="TimerFire" type="Timer" parent="."]
 unique_name_in_owner = true
 wait_time = 0.05
 one_shot = true
+
+[node name="TimerInvincible" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="TimerInvincible" to="." method="_on_timer_invincible_timeout"]

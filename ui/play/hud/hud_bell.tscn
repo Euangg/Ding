@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://b88aasy2whwbs"]
+
+[ext_resource type="Texture2D" uid="uid://b3uewmuj26pgw" path="res://ui/play/hud/HUD.png" id="1_2mjyr"]
+[ext_resource type="Texture2D" uid="uid://bw17ihgtcsxdi" path="res://ui/play/hud/bell_idle.tres" id="2_2mjyr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7k6w"]
+atlas = ExtResource("1_2mjyr")
+region = Rect2(307, 6, 58, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqf0n"]
+atlas = ExtResource("1_2mjyr")
+region = Rect2(308, 135, 56, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8s8f"]
+atlas = ExtResource("1_2mjyr")
+region = Rect2(308, 71, 56, 2)
+
+[node name="HudBell" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+metadata/_edit_horizontal_guides_ = [-43.0]
+metadata/_edit_vertical_guides_ = [93.0]
+
+[node name="BarBack" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 3.0
+offset_right = 93.0
+offset_bottom = 43.0
+step = 0.01
+value = 100.0
+fill_mode = 1
+texture_under = SubResource("AtlasTexture_t7k6w")
+texture_progress = SubResource("AtlasTexture_sqf0n")
+texture_progress_offset = Vector2(1, 1)
+
+[node name="Bar" type="TextureProgressBar" parent="BarBack"]
+layout_mode = 0
+offset_right = 58.0
+offset_bottom = 40.0
+step = 0.01
+value = 100.0
+fill_mode = 1
+texture_under = SubResource("AtlasTexture_t7k6w")
+texture_progress = SubResource("AtlasTexture_g8s8f")
+texture_progress_offset = Vector2(1, 1)
+
+[node name="HeadPic" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 345.0
+offset_bottom = 417.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_2mjyr")

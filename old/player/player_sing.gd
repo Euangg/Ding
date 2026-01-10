@@ -16,12 +16,12 @@ func control(delta:float):
 	var vector_input=Input.get_vector("a","d","w","s")
 	if is_dead:
 		velocity=speed*2*vector_input.normalized()
-		animation_player.play("RESET")
+		#animation_player.play("RESET")
 	else:
 		velocity=speed*vector_input.normalized()
-		if velocity.is_zero_approx():animation_player.play("idle")
-		else:
-			if timer_atk.is_stopped():animation_player.play("walk")
+		#if velocity.is_zero_approx():animation_player.play("idle")
+		#else:
+		#	if timer_atk.is_stopped():animation_player.play("walk")
 	
 	move_and_slide()
 	if is_dead:pass
@@ -55,7 +55,7 @@ func control(delta:float):
 				if atk_stack.size()>5:atk_stack.pop_front()
 				timer_input_reset.start()
 				area_damage.monitoring=true
-				animation_player.play("atk")
+				#animation_player.play("atk")
 				animation_player_2.play("atk_effect")
 				timer_atk.start()
 				is_atk=true
@@ -70,8 +70,8 @@ func _on_area_damage_body_entered(body: Node2D) -> void:
 	#else:Global.play_sfx(Global.SFX_MONSTER_HURT)
 
 func _on_timer_atk_timeout() -> void:
-	if velocity.is_zero_approx():animation_player.play("idle")
-	else :animation_player.play("walk")
+	#if velocity.is_zero_approx():animation_player.play("idle")
+	#else :animation_player.play("walk")
 	is_atk=false
 
 func _on_timer_input_reset_timeout() -> void:

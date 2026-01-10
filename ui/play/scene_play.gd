@@ -4,12 +4,11 @@ const PLAYER_BELL = preload("uid://c0xxxwf6fo0lx")
 const PLAYER_LENS = preload("uid://eodwrdvp6yak")
 
 var failed:bool=false
-var player_bell:Player
-var player_lens:Player
+var player_bell:Player=null
+var player_lens:Player=null
 
 signal fail_over
 
-@onready var camera: Camera2D = $Camera2D
 @onready var canvas_modulate: CanvasModulate = $CanvasModulate
 @onready var node_for_scare: CanvasLayer = $NodeForScare
 @onready var ui_fail: Control = $CanvasLayer/UiFail
@@ -29,6 +28,17 @@ func switch_level(str_level:String):
 	var marks:Array=new_level.enter_point.get_children()
 	if player_bell:player_bell.position=marks[0].position
 	if player_lens:player_lens.position=marks[1].position
+	
+signal game_over;
+func on_game_over():
+	ui_fail.show()
+	Global.play_music(Global.MUSIC_FAIL)
+	print("game over")
+func on_player_dead():
+	print("player dead")
+	if player_bell:if !player_bell.is_dead:return
+	if player_lens:if !player_lens.is_dead:return
+	game_over.emit()
 
 func _ready() -> void:
 	match Global.mode_player:
@@ -37,11 +47,18 @@ func _ready() -> void:
 		2:
 			player_bell=PLAYER_BELL.instantiate()
 			player_lens=PLAYER_LENS.instantiate()
-	if player_bell:%NodePlayers.add_child(player_bell)
+	if player_bell:
+		%NodePlayers.add_child(player_bell)
+		player_bell.dead.connect(on_player_dead)
+		Global.player_bell=player_bell
 	if player_lens:
 		%NodePlayers.add_child(player_lens)
+		player_lens.dead.connect(on_player_dead)
+		Global.player_lens=player_lens
 		player_lens.node_ammo=%NodeElements
-	#%HudPlayerState.set_players(player_bell,player_lens)
+	Global.node_players=%NodePlayers
+	Global.camera=%Camera
+	%HudPlayerState.get_players()
 	
 	switch_level("level_1_1_new")
 	
@@ -59,19 +76,7 @@ func _physics_process(delta: float) -> void:
 	var acc_position:Vector2=Vector2.ZERO
 	for p:Player in players:acc_position+=p.position
 	if players.is_empty():pass
-	else:camera.position=acc_position/players.size()
+	else:%Camera.position=acc_position/players.size()
 	
-	#if is_players_dead():
-		#if failed:pass
-		#else:
-			#Global.play_music(Global.MUSIC_FAIL)
-			#failed=true
-			##canvas_modulate.visible=false
-			##if player_bell:player_bell.timer_respawn.stop()
-			##if player_lens:player_lens.timer_respawn.stop()#复活计时器
-			#var ui=Global.UI_JUMP_SCARE.instantiate()
-			#ui.enemy_id=Global.last_kill_enemy_id
-			#node_for_scare.add_child(ui)
-
 func show_fail_ui():
 	ui_fail.visible=true

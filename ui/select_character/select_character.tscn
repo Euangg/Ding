@@ -35,10 +35,11 @@ custom_minimum_size = Vector2(0, 580)
 layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="ColorRect/VBoxContainer/ButtonBell"]
+position = Vector2(0, -41)
 texture = ExtResource("1_1veuc")
 centered = false
 region_enabled = true
-region_rect = Rect2(44, 853, 1580, 560)
+region_rect = Rect2(44, 853, 1580, 627)
 
 [node name="ButtonLens" type="Button" parent="ColorRect/VBoxContainer"]
 custom_minimum_size = Vector2(0, 480)
