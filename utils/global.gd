@@ -30,45 +30,8 @@ func play_music(music:AudioStream):
 	%Bgm.play()
 func _on_audio_stream_player_finished() -> void:%Bgm.play()
 
-enum EnemyId{
-	BAT,
-	BIG_EYE,
-	BIG_MOUTH,
-	FLOAT_HEAD,
-	FROG,
-	HAND_EYE,
-	MAN_WOMAN,
-	TWO_MOUTH,
-	WORM
-}
-
-const ENEMY_PIC = preload("uid://cy1ble73e38u0")
-const ENEMY_PIC_BAT = preload("uid://bxluwg5e0celn")
-const ENEMY_PIC_BIG_EYE = preload("uid://c3xpmlmvw0ev0")
-const ENEMY_PIC_BIG_MOUTH = preload("uid://sdi2tnfffwvk")
-const ENEMY_PIC_FLOAT_HEAD = preload("uid://cg7n884pl54ws")
-const ENEMY_PIC_FROG = preload("uid://csxehmagujibo")
-const ENEMY_PIC_HAND_EYE = preload("uid://bipcx18xbi4ns")
-const ENEMY_PIC_MAN_WOMAN = preload("uid://c8vgvrtxj18bm")
-const ENEMY_PIC_MOUTH = preload("uid://5igypggh3m2s")
-const ENEMY_PIC_WORM = preload("uid://dst4ywl2ih28w")
-
-var enemy_pics:Array=[ENEMY_PIC_BAT,ENEMY_PIC_BIG_EYE,ENEMY_PIC_BIG_MOUTH,ENEMY_PIC_FLOAT_HEAD,
-ENEMY_PIC_FROG,ENEMY_PIC_HAND_EYE,ENEMY_PIC_MAN_WOMAN,ENEMY_PIC_MOUTH,ENEMY_PIC_WORM]
-
-const EFFECT_DEFEAT_BLACK_1 = preload("res://elements/effect/effect_defeat_black_1.tscn")
-const EFFECT_DEFEAT_BLACK_2 = preload("res://elements/effect/effect_defeat_black_2.tscn")
-const EFFECT_DEFEAT_BLUE_1 = preload("res://elements/effect/effect_defeat_blue_1.tscn")
-const EFFECT_DEFEAT_BLUE_2 = preload("res://elements/effect/effect_defeat_blue_2.tscn")
-const EFFECT_DEFEAT_RED_1 = preload("res://elements/effect/effect_defeat_red_1.tscn")
-const EFFECT_DEFEAT_RED_2 = preload("res://elements/effect/effect_defeat_red_2.tscn")
-
-const UI_JUMP_SCARE = preload("uid://18ugjk8ni5le")
-
-const AMMO = preload("res://elements/projectile/Ammo.tscn")
-
 var mode_player:int
-
+ 
 var node_ammo:Node2D
 var node_effect:Node2D
 var node_players:Node2D
@@ -76,4 +39,5 @@ var player_bell:Player
 var player_lens:Player
 var camera:Camera2D
 
-var last_kill_enemy_id
+func _ready() -> void:
+	print("Global ready")

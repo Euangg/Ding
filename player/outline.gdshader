@@ -3,10 +3,6 @@ shader_type canvas_item;
 uniform float outline_width=1.0;
 uniform vec4 outline_color:source_color=vec4(0,0,0,1);
 
-void vertex() {
-	COLOR=vec4(1,1,1,COLOR.a);
-}
-
 void fragment() {
 	vec2 uv=UV;
 	vec2 uv_up=uv+vec2(0,TEXTURE_PIXEL_SIZE.y)*outline_width;
@@ -22,5 +18,6 @@ void fragment() {
 	outline.rgb=outline_color.rgb;
 
 	vec4 original_color=texture(TEXTURE,UV);
-	COLOR =mix(outline,original_color,original_color.a);
+	COLOR.a=(color_up.a+color_down.a+color_left.a+color_right.a)/4.0;
+	COLOR.rgb =mix(outline.rgb,original_color.rgb,original_color.a);
 }
