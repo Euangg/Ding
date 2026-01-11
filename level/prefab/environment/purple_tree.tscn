@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3inny1fd4533"]
+
+[ext_resource type="Texture2D" uid="uid://bbf6c3llb266a" path="res://level/prefab/environment/purple_tree.tres" id="1_yt658"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yt658"]
+size = Vector2(174, 68)
+
+[node name="PurpleTree" type="Node2D"]
+
+[node name="PurpleTree" type="Sprite2D" parent="."]
+position = Vector2(149.00002, -367.00003)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_yt658")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(-16, -32)
+shape = SubResource("RectangleShape2D_yt658")

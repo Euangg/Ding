@@ -75,6 +75,7 @@ mouse_filter = 2
 color = Color(18.892157, 18.892157, 18.892157, 0)
 
 [node name="Ghost01" type="Sprite2D" parent="CanvasLayer/ColorRect"]
+modulate = Color(0.67058825, 0.54901963, 0.67058825, 1)
 self_modulate = Color(0.9459776, 0.88272464, 0.9459776, 1)
 z_index = 2
 position = Vector2(92, 651)
@@ -84,6 +85,7 @@ texture = ExtResource("3_5fae1")
 script = ExtResource("4_em0sh")
 
 [node name="Ghost02" type="Sprite2D" parent="CanvasLayer/ColorRect"]
+modulate = Color(0.5137255, 0.54509807, 0.7254902, 1)
 z_index = 2
 position = Vector2(1747.9999, 514)
 scale = Vector2(0.5921409, 0.5921409)
@@ -91,6 +93,7 @@ texture = ExtResource("4_lphlo")
 script = ExtResource("4_em0sh")
 
 [node name="Ghost03" type="Sprite2D" parent="CanvasLayer/ColorRect"]
+modulate = Color(0.6745098, 0.5803922, 0.74509805, 1)
 z_index = 1
 position = Vector2(1911, 250.00002)
 scale = Vector2(0.55709857, 0.55709857)
@@ -98,6 +101,7 @@ texture = ExtResource("5_em0sh")
 script = ExtResource("4_em0sh")
 
 [node name="Ghost04" type="Sprite2D" parent="CanvasLayer/ColorRect"]
+modulate = Color(0.72156864, 0.6745098, 0.6862745, 1)
 self_modulate = Color(0.8891022, 0.8929553, 0.8929553, 1)
 z_index = 1
 position = Vector2(48.999996, 381)
@@ -120,6 +124,7 @@ metadata/_edit_lock_ = true
 
 [node name="FrameLight" type="Sprite2D" parent="CanvasLayer/ColorRect"]
 unique_name_in_owner = true
+visible = false
 z_index = 1
 position = Vector2(960, 890.00006)
 scale = Vector2(0.831, 0.831)

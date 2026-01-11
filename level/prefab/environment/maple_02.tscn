@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dglpmlbhflhbp"]
+
+[ext_resource type="Texture2D" uid="uid://bx8osp0bl1lxb" path="res://level/prefab/environment/maple_02.tres" id="1_hg27u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsd5c"]
+size = Vector2(68, 56)
+
+[node name="Maple02" type="Node2D"]
+
+[node name="maple_02" type="Sprite2D" parent="."]
+position = Vector2(52.999996, -396.99997)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_hg27u")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(5, -28)
+shape = SubResource("RectangleShape2D_xsd5c")

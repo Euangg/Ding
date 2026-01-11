@@ -3,18 +3,19 @@
 [ext_resource type="Texture2D" uid="uid://cgivo0jv2nyga" path="res://level/prefab/environment/tree_dead.tres" id="1_vopjg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vopjg"]
-size = Vector2(37, 12)
+size = Vector2(61.5, 29)
 
 [node name="TreeDead" type="Node2D"]
 
 [node name="TreeDead" type="Sprite2D" parent="."]
-position = Vector2(0, -29)
+position = Vector2(-46, -79)
+scale = Vector2(3, 3)
 texture = ExtResource("1_vopjg")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(15.5, -6)
+visible = false
+position = Vector2(-3.75, -18.5)
 shape = SubResource("RectangleShape2D_vopjg")
