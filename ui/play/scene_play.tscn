@@ -1,8 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://csresjl4ikdxf"]
+[gd_scene load_steps=17 format=3 uid="uid://csresjl4ikdxf"]
 
 [ext_resource type="Script" uid="uid://dylwipnntpk52" path="res://ui/play/scene_play.gd" id="1_pq2io"]
 [ext_resource type="Shader" uid="uid://cegniv2v06fie" path="res://ui/play/glitech.gdshader" id="2_lphlo"]
-[ext_resource type="PackedScene" uid="uid://b6g84lv670ubp" path="res://level/level_1_1/level_1_1.tscn" id="2_tcohp"]
 [ext_resource type="Texture2D" uid="uid://16x0gga4vkuc" path="res://ui/play/ghost01.tres" id="3_5fae1"]
 [ext_resource type="Texture2D" uid="uid://d108p84d5nra6" path="res://ui/play/frame.png" id="3_trsgt"]
 [ext_resource type="Texture2D" uid="uid://wto810c0siw2" path="res://ui/play/frame_light.png" id="4_dscmi"]
@@ -63,9 +62,6 @@ unique_name_in_owner = true
 [node name="Level" type="Node2D" parent="."]
 unique_name_in_owner = true
 y_sort_enabled = true
-
-[node name="Level11" parent="Level" instance=ExtResource("2_tcohp")]
-position = Vector2(-1896, -77)
 
 [node name="NodePlayers" type="Node2D" parent="."]
 unique_name_in_owner = true

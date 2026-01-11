@@ -274,5 +274,5 @@ offset_top = -111.0
 offset_right = 200.0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 80
-text = "v0.11a"
+text = "v0.11"
 vertical_alignment = 2
