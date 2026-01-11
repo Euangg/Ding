@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://q7a4808g4je5"]
+
+[ext_resource type="Texture2D" uid="uid://cbxjuy7f8bk6r" path="res://level/prefab/environment/group_spruce.tres" id="1_ca6xx"]
+
+[node name="GroupSpruce" type="Node2D"]
+
+[node name="GroupSpruce" type="Sprite2D" parent="."]
+position = Vector2(4.7683716e-07, -248)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_ca6xx")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(10, -91)
+polygon = PackedVector2Array(-155.17235, 23.309277, -77.17235, 23.309277, -1.1723461, 52.309277, -3.172346, 90.30928, 50.827652, 90.30928, 39.827652, 45.309277, 98.82765, 19.309277, 70.82765, -46.690723, 100.82765, -50.690723, 98.82765, -90.69072, 41.827652, -84.69072, -30.172346, -71.69072, -70.17235, 1.3092766, -136.17235, -2.6907234)

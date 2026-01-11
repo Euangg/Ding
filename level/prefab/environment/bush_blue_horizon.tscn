@@ -15,9 +15,10 @@ size = Vector2(296, 16)
 [node name="BushBlueHorizon" type="Node2D"]
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = -150.0
-offset_top = -44.0
-offset_right = 150.0
+offset_left = -300.0
+offset_top = -43.0
+offset_bottom = 1.0
+scale = Vector2(2, 2)
 theme_override_styles/panel = SubResource("StyleBoxTexture_lvlpf")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Panel"]

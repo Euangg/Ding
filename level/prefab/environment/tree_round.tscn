@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://sp20vy6scdh7"]
+
+[ext_resource type="Texture2D" uid="uid://7q82m72bd6kl" path="res://level/prefab/environment/tree_round.tres" id="1_l4u46"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3h1fy"]
+size = Vector2(36, 46)
+
+[node name="TreeRound" type="Node2D"]
+
+[node name="tree_round" type="Sprite2D" parent="."]
+position = Vector2(9, -154)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_l4u46")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(4, -23)
+shape = SubResource("RectangleShape2D_3h1fy")

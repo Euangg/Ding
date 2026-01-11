@@ -3,18 +3,19 @@
 [ext_resource type="Texture2D" uid="uid://fw2qnifojoi0" path="res://level/prefab/environment/tree_dry.tres" id="1_snbka"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vouv6"]
-size = Vector2(29, 9)
+size = Vector2(45, 27)
 
 [node name="TreeDry" type="Node2D"]
 
 [node name="TreeDry" type="Sprite2D" parent="."]
-position = Vector2(0, -32)
+position = Vector2(0, -114)
+scale = Vector2(4, 4)
 texture = ExtResource("1_snbka")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(9.5, -4.5)
+visible = false
+position = Vector2(37.5, -13.5)
 shape = SubResource("RectangleShape2D_vouv6")
