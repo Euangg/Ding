@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://csresjl4ikdxf"]
+[gd_scene load_steps=18 format=3 uid="uid://csresjl4ikdxf"]
 
 [ext_resource type="Script" uid="uid://dylwipnntpk52" path="res://ui/play/scene_play.gd" id="1_pq2io"]
 [ext_resource type="Shader" uid="uid://cegniv2v06fie" path="res://ui/play/glitech.gdshader" id="2_lphlo"]
+[ext_resource type="PackedScene" uid="uid://b6g84lv670ubp" path="res://level/level_1_1/level_1_1.tscn" id="2_tcohp"]
 [ext_resource type="Texture2D" uid="uid://16x0gga4vkuc" path="res://ui/play/ghost01.tres" id="3_5fae1"]
 [ext_resource type="Texture2D" uid="uid://d108p84d5nra6" path="res://ui/play/frame.png" id="3_trsgt"]
 [ext_resource type="Texture2D" uid="uid://wto810c0siw2" path="res://ui/play/frame_light.png" id="4_dscmi"]
@@ -29,25 +30,25 @@ shader_parameter/line_intensity = 0.0430000020425
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_eu3tx"]
 shader = ExtResource("4_hgx43")
 shader_parameter/overlay = true
-shader_parameter/scanlines_opacity = 0.4
-shader_parameter/scanlines_width = 0.25
-shader_parameter/grille_opacity = 0.3
-shader_parameter/resolution = Vector2(160, 90)
+shader_parameter/scanlines_opacity = 0.6710000318725
+shader_parameter/scanlines_width = 0.2530000120175
+shader_parameter/grille_opacity = 0.334000015865
+shader_parameter/resolution = Vector2(400, 200)
 shader_parameter/pixelate = false
 shader_parameter/roll = true
 shader_parameter/roll_speed = 8.0
 shader_parameter/roll_size = 15.0
-shader_parameter/roll_variation = 1.8
-shader_parameter/distort_intensity = 0.05
-shader_parameter/noise_opacity = 0.2510000119225
-shader_parameter/noise_speed = 5.0
-shader_parameter/static_noise_intensity = 0.0
-shader_parameter/aberration = 4.7499999933364734e-08
+shader_parameter/roll_variation = 2.19700010109762
+shader_parameter/distort_intensity = 0.0670000031825
+shader_parameter/noise_opacity = 0.37200001767
+shader_parameter/noise_speed = 7.415
+shader_parameter/static_noise_intensity = 0.05200000247
+shader_parameter/aberration = 0.010000047974999982
 shader_parameter/brightness = 1.4
 shader_parameter/discolor = true
-shader_parameter/warp_amount = 0.0
-shader_parameter/clip_warp = true
-shader_parameter/vignette_intensity = 0.4
+shader_parameter/warp_amount = 3.382000160645
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 1.925
 shader_parameter/vignette_opacity = 0.5
 
 [node name="ScenePlay" type="Control"]
@@ -62,6 +63,8 @@ unique_name_in_owner = true
 [node name="Level" type="Node2D" parent="."]
 unique_name_in_owner = true
 y_sort_enabled = true
+
+[node name="Level11" parent="Level" instance=ExtResource("2_tcohp")]
 
 [node name="NodePlayers" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -98,7 +101,6 @@ grow_vertical = 2
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -157,7 +159,6 @@ metadata/_edit_lock_ = true
 
 [node name="FrameLight" type="Sprite2D" parent="CanvasLayer/ColorRect"]
 unique_name_in_owner = true
-visible = false
 z_index = 1
 position = Vector2(960, 890.00006)
 scale = Vector2(0.831, 0.831)
@@ -176,6 +177,8 @@ metadata/_edit_lock_ = true
 
 [node name="HudPlayerState" parent="CanvasLayer" instance=ExtResource("12_em0sh")]
 unique_name_in_owner = true
+offset_left = -1.0
+offset_right = -1.0
 
 [node name="UiFail" parent="CanvasLayer" instance=ExtResource("7_6apec")]
 visible = false

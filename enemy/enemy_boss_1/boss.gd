@@ -68,3 +68,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	target=body
+
+
+func _on_dead() -> void:Global.switch_scene(Global.SCENE_PASS)

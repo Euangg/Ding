@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://b66m3xf472twk"]
+
+[ext_resource type="Script" uid="uid://c03wkug3wh8y3" path="res://level/level_1_2_new/level_1_2_new.gd" id="1_12wdd"]
+[ext_resource type="Texture2D" uid="uid://kk8rgpqyxony" path="res://level/level_1_2_new/1-2.png" id="2_4weut"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12wdd"]
+size = Vector2(3341.5, 1968.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4weut"]
+size = Vector2(4855.5, 590.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbsej"]
+size = Vector2(744.25, 3762.0625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmark"]
+size = Vector2(508.25, 1189.5313)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1futj"]
+size = Vector2(5028.5, 290.8828)
+
+[node name="Level12New" type="Node2D"]
+script = ExtResource("1_12wdd")
+
+[node name="12" type="Sprite2D" parent="."]
+texture = ExtResource("2_4weut")
+centered = false
+
+[node name="EnterPoint" type="Node" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="EnterPoint"]
+position = Vector2(210, 4335)
+
+[node name="Marker2D2" type="Marker2D" parent="EnterPoint"]
+position = Vector2(194, 4525)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1680.25, 3207.25)
+shape = SubResource("RectangleShape2D_12wdd")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2058.25, 4921)
+shape = SubResource("RectangleShape2D_4weut")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(4762.875, 2884.9688)
+shape = SubResource("RectangleShape2D_cbsej")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(5276.875, 426)
+shape = SubResource("RectangleShape2D_fmark")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2593.25, -27.558594)
+shape = SubResource("RectangleShape2D_1futj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(299, 118, -1, 124, -2, 2227, 92, 2230, 139, 603, 544, 590, 547, 382, 299, 385)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(933, 368, 4869, 364, 4882, 833, 4388, 850, 4388, 474, 3367, 488, 3369, 2229, 2167, 2221, 2193, 586, 941, 582)

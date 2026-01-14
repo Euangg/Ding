@@ -5,7 +5,7 @@
 
 [node name="Boss" type="CharacterBody2D"]
 script = ExtResource("1_8ogta")
-hp = Vector2(3000, 3000)
+hp = Vector2(2000, 2000)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
@@ -37,3 +37,5 @@ monitorable = false
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HurtBox"]
 scale = Vector2(2, 2)
 polygon = PackedVector2Array(-92, -85, -1, -41, 93, -85, 90, 83, 12, 14, -12, 14, -91, 84)
+
+[connection signal="dead" from="." to="." method="_on_dead"]

@@ -163,7 +163,7 @@ void fragment() {
 	
 	//黑色边框+晕映
 	//text.rgb *= border(uv);
-	//text.rgb*=vignette(uv);
+	text.rgb*=vignette(uv);
 	//if (clip_warp)text.a=border(uv);
 	
 	//应用褪色效果以获得 VHS 效果（降低饱和度并提高对比度）

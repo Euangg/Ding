@@ -17,7 +17,8 @@ var dict_level={
 	"level_1_1":preload("uid://b6g84lv670ubp"),
 	"level_1_2":preload("uid://ine5ls1mg6cq"),
 	"level_2_1":preload("uid://bl8x41hl8y1tu"),
-	"level_1_1_new":preload("uid://kemeum84sb52")
+	"level_1_1_new":preload("uid://kemeum84sb52"),
+	"level_1_2_new": preload("uid://b66m3xf472twk")
 }
 func switch_level(str_level:String):
 	var old_level:Array=%Level.get_children()
@@ -60,7 +61,7 @@ func _ready() -> void:
 	Global.camera=%Camera
 	%HudPlayerState.get_players()
 	
-	switch_level("level_1_1_new")
+	switch_level("level_1_2_new")
 	
 	Global.play_music(Global.MUSIC_PLAY)
 	fail_over.connect(show_fail_ui)

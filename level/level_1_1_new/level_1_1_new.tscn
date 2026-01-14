@@ -22,6 +22,8 @@ size = Vector2(419, 1881)
 [node name="Level11New" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_3hcpr")
+metadata/_edit_horizontal_guides_ = [4960.0]
+metadata/_edit_vertical_guides_ = [6640.0]
 
 [node name="EnterPoint" type="Node" parent="."]
 
