@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://13ldokde6875"
-path="res://.godot/imported/man_woman.png-e9922f3c78c5b240278ca6575028bb79.ctex"
+uid="uid://b2xfd53meu4hu"
+path="res://.godot/imported/5c3d400316e09a98d1d76c21f87510a5.png-b8b10b582f0f9b99c3a03a1dc87a0301.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://enemy/pic/man_woman.png"
-dest_files=["res://.godot/imported/man_woman.png-e9922f3c78c5b240278ca6575028bb79.ctex"]
+source_file="res://level/level_1_2_new/5c3d400316e09a98d1d76c21f87510a5.png"
+dest_files=["res://.godot/imported/5c3d400316e09a98d1d76c21f87510a5.png-b8b10b582f0f9b99c3a03a1dc87a0301.ctex"]
 
 [params]
 

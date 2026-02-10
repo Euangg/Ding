@@ -1,11 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://duils3wayutid"]
+[gd_scene format=3 uid="uid://duils3wayutid"]
 
 [ext_resource type="Script" uid="uid://ba62hl46lyoon" path="res://level/level.gd" id="1_7lnir"]
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" unique_id=1255747041]
 y_sort_enabled = true
 script = ExtResource("1_7lnir")
 
-[node name="EnterPoint" type="Node" parent="."]
+[node name="EnterPoint" type="Node" parent="." unique_id=2033577344]
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1172762351]
+
+[node name="NodeCameraRange" type="Node" parent="." unique_id=283825981]
+
+[node name="LT" type="Marker2D" parent="NodeCameraRange" unique_id=2097236063]
+
+[node name="RB" type="Marker2D" parent="NodeCameraRange" unique_id=805318200]

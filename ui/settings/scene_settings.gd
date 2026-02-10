@@ -9,7 +9,7 @@ func _physics_process(delta: float) -> void:
 	area_2d_2.position=get_local_mouse_position()
 	if Input.is_action_just_pressed("esc")\
 	or (Input.is_action_just_pressed("mouse_left") and area_2d.overlaps_area(area_2d_2)):
-		Global.switch_scene(Global.SCENE_THEME)
+		Global.switch_scene(Global.UI_THEME)
 	
 func _on_h_scroll_bar_music_scrolling() -> void:
 	var index=AudioServer.get_bus_index("Music")

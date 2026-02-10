@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://oq88a2lh5glg"]
+
+[ext_resource type="Script" uid="uid://ba8r8j51ya065" path="res://enemy/enemy_god_angry/enemy_god_angry.gd" id="1_auic4"]
+[ext_resource type="Texture2D" uid="uid://13ldokde6875" path="res://enemy/enemy_god_angry/man_woman.png" id="2_gx20c"]
+
+[node name="EnemyGodAngry" type="CharacterBody2D"]
+script = ExtResource("1_auic4")
+hp = Vector2(3000, 3000)
+
+[node name="ManWoman" type="Sprite2D" parent="."]
+position = Vector2(54, -41)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_gx20c")
+region_enabled = true
+region_rect = Rect2(967, 2735, 818, 2023)
+
+[node name="TimerIdle" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 1.6999999999999995
+one_shot = true
+
+[node name="TimerAttack" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 1.4
+one_shot = true
+
+[node name="HurtBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 32
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HurtBox"]
+scale = Vector2(2, 2)
+polygon = PackedVector2Array(-25, -52, -52, -134, -24, -148, -18.5, -216.5, 0, -222.5, 17.5, -216, 24.5, -148, 53.5, -136.5, 24.5, -47, 50, 7, 33.5, 81.5, 50.5, 151, 107.5, 172, 41, 182.5, -1, 155.5, -11.5, 126, -31.5, 104.5, -35.5, 68.5, -49.5, 6.5)
+
+[connection signal="dead" from="." to="." method="_on_dead"]

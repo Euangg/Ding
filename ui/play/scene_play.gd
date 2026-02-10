@@ -30,6 +30,11 @@ func switch_level(str_level:String):
 	if player_bell:player_bell.position=marks[0].position
 	if player_lens:player_lens.position=marks[1].position
 	
+	%Camera.limit_left=new_level.lt.position.x
+	%Camera.limit_top=new_level.lt.position.y
+	%Camera.limit_right=new_level.rb.position.x
+	%Camera.limit_bottom=new_level.rb.position.y
+	
 signal game_over;
 func on_game_over():
 	ui_fail.show()
@@ -61,17 +66,14 @@ func _ready() -> void:
 	Global.camera=%Camera
 	%HudPlayerState.get_players()
 	
-	switch_level("level_1_2_new")
+	match Global.next_level:
+		1:switch_level("level_1_1_new")
+		2:switch_level("level_1_2_new")
 	
-	Global.play_music(Global.MUSIC_PLAY)
 	fail_over.connect(show_fail_ui)
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("esc"):Global.switch_scene(Global.SCENE_THEME)
-	
-	if Input.is_action_just_pressed("h"):switch_level("level_1_1")
-	if Input.is_action_just_pressed("j"):switch_level("level_1_2")
-	if Input.is_action_just_pressed("k"):switch_level("level_2_1")
+	if Input.is_action_just_pressed("esc"):Global.switch_scene(Global.UI_THEME)
 	
 	var players:Array=%NodePlayers.get_children()
 	var acc_position:Vector2=Vector2.ZERO

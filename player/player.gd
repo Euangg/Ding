@@ -28,3 +28,7 @@ func try_get_damage(v:float):
 
 func _on_timer_invincible_timeout() -> void:
 	graphic.modulate.a=1
+
+
+func turn_on_light():%PointLight2D.visible=true
+func turn_off_light():%PointLight2D.visible=false

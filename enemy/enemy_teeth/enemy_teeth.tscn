@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://e3yfaui8iuer"]
+
+[ext_resource type="Script" uid="uid://dg3avm3k3pkfg" path="res://enemy/enemy_teeth/enemy_teeth.gd" id="1_i7lk1"]
+[ext_resource type="Texture2D" uid="uid://yfijgqvvtdl" path="res://enemy/enemy_teeth/teeth.png" id="1_qdjmu"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_i7lk1"]
+a = Vector2(0, -75)
+b = Vector2(0, 75)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i7lk1"]
+radius = 500.0
+
+[node name="EnemyTeeth" type="CharacterBody2D"]
+collision_layer = 4
+script = ExtResource("1_i7lk1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("SegmentShape2D_i7lk1")
+
+[node name="Graphic" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Teeth" type="Sprite2D" parent="Graphic"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_qdjmu")
+region_enabled = true
+region_rect = Rect2(930, 141, 628, 912)
+
+[node name="RayCastUp" type="RayCast2D" parent="Graphic"]
+unique_name_in_owner = true
+position = Vector2(0, -75)
+target_position = Vector2(-50, 0)
+
+[node name="RayCastDown" type="RayCast2D" parent="Graphic"]
+unique_name_in_owner = true
+position = Vector2(0, 75)
+target_position = Vector2(-50, 0)
+
+[node name="RayCastTop" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -75)
+target_position = Vector2(0, -5)
+
+[node name="RayCastBottom" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 75)
+target_position = Vector2(0, 5)
+
+[node name="TimerAtkCd" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="AreaRange" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaRange"]
+shape = SubResource("CircleShape2D_i7lk1")
+
+[node name="HurtBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 32
+collision_mask = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HurtBox"]
+polygon = PackedVector2Array(20, -91, 62, -1, 21, 91, 0, 77, -20, 91, -62, 0, -20, -90, 0, -74)

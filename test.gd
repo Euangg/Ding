@@ -7,8 +7,8 @@ func _ready() -> void:
 	Global.node_ammo=self
 	%PlayerLens.node_ammo=self
 	Global.node_players=%NodePlayers
-	
-	%Boss.target_position=%Marker2D.position
+	%EnemyGodAngry.target_position=%Marker2D.position
+
 
 func _on_timer_timeout() -> void:
 	#var b:Enemy=ENEMY_BAT.instantiate()

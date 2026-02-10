@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yfijgqvvtdl"
-path="res://.godot/imported/two_mouth.png-6c7fec19da0947d0b4a3e76bd72f89b3.ctex"
+uid="uid://bqximdivqo6fc"
+path="res://.godot/imported/float_head.png-bce84f7e1edc895b3207d7630e57a384.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://enemy/pic/two_mouth.png"
-dest_files=["res://.godot/imported/two_mouth.png-6c7fec19da0947d0b4a3e76bd72f89b3.ctex"]
+source_file="res://enemy/enemy_frozen/float_head.png"
+dest_files=["res://.godot/imported/float_head.png-bce84f7e1edc895b3207d7630e57a384.ctex"]
 
 [params]
 

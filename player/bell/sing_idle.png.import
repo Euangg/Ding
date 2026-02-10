@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lgbv4tdxgk1c"
-path="res://.godot/imported/sing_atk.png-b2bf118c3f88f2b8a49408cf26b4623f.ctex"
+uid="uid://b75mfh5nlbp5b"
+path="res://.godot/imported/sing_idle.png-318d02aefac9f4eef961b9c66e3ff6d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://old/player/sing_atk.png"
-dest_files=["res://.godot/imported/sing_atk.png-b2bf118c3f88f2b8a49408cf26b4623f.ctex"]
+source_file="res://player/bell/sing_idle.png"
+dest_files=["res://.godot/imported/sing_idle.png-318d02aefac9f4eef961b9c66e3ff6d4.ctex"]
 
 [params]
 

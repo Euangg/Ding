@@ -23,4 +23,4 @@ func ready():
 	is_ready=true
 	animation_player_2.play("loop")
 
-func end():Global.switch_scene(Global.SCENE_PLAY)
+func end():Global.switch_scene(Global.UI_PLAY)

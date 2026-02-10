@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bn4yccmfxnyro"]
+[gd_scene format=3 uid="uid://bn4yccmfxnyro"]
 
 [ext_resource type="Script" uid="uid://776sb25w072r" path="res://ui/pass/scene_pass.gd" id="1_bqipw"]
 [ext_resource type="Texture2D" uid="uid://c5gkotd1tbfkv" path="res://ui/pass/pass.png" id="2_425f4"]
@@ -89,7 +89,7 @@ _data = {
 &"start": SubResource("Animation_425f4")
 }
 
-[node name="ScenePass" type="Control"]
+[node name="ScenePass" type="Control" unique_id=433662069]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -98,7 +98,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bqipw")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1511339361]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -107,12 +107,12 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 0, 1)
 
-[node name="Pass" type="Sprite2D" parent="ColorRect"]
+[node name="Pass" type="Sprite2D" parent="ColorRect" unique_id=1818899134]
 position = Vector2(559, 2201)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_425f4")
 
-[node name="Button" type="Button" parent="ColorRect"]
+[node name="Button" type="Button" parent="ColorRect" unique_id=42264557]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -128,7 +128,7 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 200
 text = "确认"
 
-[node name="Label" type="Label" parent="ColorRect"]
+[node name="Label" type="Label" parent="ColorRect" unique_id=705271685]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -144,10 +144,8 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 300
 text = "你过关"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_24dlf")
-}
-autoplay = "start"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2067254349]
+libraries/ = SubResource("AnimationLibrary_24dlf")
+autoplay = &"start"
 
 [connection signal="pressed" from="ColorRect/Button" to="." method="_on_button_pressed"]

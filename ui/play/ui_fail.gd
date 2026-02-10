@@ -8,8 +8,8 @@ func _ready() -> void:
 
 func _on_button_pressed() -> void:
 	hide()
-	Global.switch_scene(Global.SCENE_PLAY)
+	Global.switch_scene(Global.UI_PLAY)
 
 func _on_button_2_pressed() -> void:
 	hide()
-	Global.switch_scene(Global.SCENE_THEME)
+	Global.switch_scene(Global.UI_THEME)

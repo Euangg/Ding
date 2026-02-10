@@ -10,8 +10,8 @@ var state:State=State.NULL
 
 func _physics_process(delta: float) -> void:
 	var vector_input=Input.get_vector("a","d","w","s")
-	if vector_input.is_zero_approx():pass
-	else:%HitBox.rotation=vector_input.angle()
+	#if vector_input.is_zero_approx():pass
+	#else:%HitBox.rotation=vector_input.angle()
 	
 	#1/3.状态判断
 	var next_state=state
@@ -33,6 +33,7 @@ func _physics_process(delta: float) -> void:
 			State.ATTACK:
 				%HitBox.monitoring=false
 				%CPUParticles2D.emitting=false
+				%AnimationPlayerAtkWalk.stop()
 		match next_state:
 			State.STAND:
 				%AnimationPlayer.play("idle")
@@ -45,6 +46,7 @@ func _physics_process(delta: float) -> void:
 				%SfxWalk.stop()
 				%HitBox.monitoring=true
 				%CPUParticles2D.emitting=true
+				%AnimationPlayerAtkWalk.play("walk")
 		state=next_state
 	#3/3.状态运行
 	match state:
@@ -53,7 +55,11 @@ func _physics_process(delta: float) -> void:
 		State.WALK:
 			velocity=vector_input.normalized()*speed
 		State.ATTACK:
-			velocity=Vector2.ZERO
+			if vector_input.is_zero_approx():%AnimationPlayerAtkWalk.pause()
+			else:%AnimationPlayerAtkWalk.play()
+			velocity=vector_input.normalized()*speed
+			if(Input.is_action_just_pressed("v")):%HitBox.rotation-=PI/4
+			if(Input.is_action_just_pressed("b")):%HitBox.rotation+=PI/4
 			if %HitBox.monitoring:
 				var arr_enemy:Array[Area2D]=%HitBox.get_overlapping_areas()
 				for a in arr_enemy:

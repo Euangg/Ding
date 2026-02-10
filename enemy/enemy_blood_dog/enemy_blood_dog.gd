@@ -65,9 +65,3 @@ func _physics_process(delta: float) -> void:
 	for a in hit_areas:
 		var p:Player=a.get_parent()
 		p.try_get_damage(25)
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	target=body
-
-
-func _on_dead() -> void:Global.switch_scene(Global.SCENE_PASS)

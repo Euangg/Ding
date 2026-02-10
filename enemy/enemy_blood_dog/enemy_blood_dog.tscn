@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cvplimo3ikauy"]
+
+[ext_resource type="Script" uid="uid://cjua1gd1k4jw6" path="res://enemy/enemy_blood_dog/enemy_blood_dog.gd" id="1_8ogta"]
+[ext_resource type="Texture2D" uid="uid://bsipggvy2dnxt" path="res://enemy/enemy_blood_dog/blood_dog.png" id="2_s05hk"]
+
+[node name="EnemyBloodDog" type="CharacterBody2D" unique_id=1047841283]
+script = ExtResource("1_8ogta")
+hp = Vector2(2000, 2000)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1515503537]
+position = Vector2(1.1920929e-07, 34.999996)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_s05hk")
+region_enabled = true
+region_rect = Rect2(762, 1303, 956, 1415)
+
+[node name="TimerIdle" type="Timer" parent="." unique_id=187032468]
+unique_name_in_owner = true
+wait_time = 2.0
+one_shot = true
+
+[node name="TimerMove" type="Timer" parent="." unique_id=239544844]
+unique_name_in_owner = true
+wait_time = 4.0
+one_shot = true
+
+[node name="TimerAttack" type="Timer" parent="." unique_id=1777222686]
+unique_name_in_owner = true
+wait_time = 1.5
+one_shot = true
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=795520284]
+unique_name_in_owner = true
+collision_layer = 32
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HurtBox" unique_id=1815781108]
+scale = Vector2(2, 2)
+polygon = PackedVector2Array(-63.5, -41, -28, -55, -23.5, -94.5, -0.5, -106.5, 25.5, -94, 28, -55, 64, -38.5, 79, 72.5, 36, 71.5, 27, 142, -2, 115, -27.5, 140.5, -35.5, 68.5, -80, 71.5)

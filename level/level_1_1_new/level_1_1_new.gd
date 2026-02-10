@@ -6,7 +6,7 @@ const BOSS = preload("uid://cvplimo3ikauy")
 var boss_spawned=false
 
 func _ready() -> void:
-	pass
+	Global.play_music(Global.MUSIC_PLAY)
 	
 func _physics_process(delta: float) -> void:
 	pass
@@ -24,6 +24,9 @@ func _on_area_boss_body_entered(body: Node2D) -> void:
 	var e:Boss=BOSS.instantiate()
 	e.position=%MarkerBossSpawn.position
 	e.target_position=%MarkerBossTarget.position
+	e.dead.connect(func():
+		Global.next_level=2
+		Global.switch_scene(Global.UI_INTERLUDE))
 	%NodeEnemy.call_deferred("add_child",e)
 	boss_spawned=true
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmrcaug7tfp7g"
-path="res://.godot/imported/sing.png-ebf4c61f7a197c4f4f3e7489e3a7c8eb.ctex"
+uid="uid://13ldokde6875"
+path="res://.godot/imported/man_woman.png-1176aa442d2e22e1ca78f9717d31d6a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://old/player/sing.png"
-dest_files=["res://.godot/imported/sing.png-ebf4c61f7a197c4f4f3e7489e3a7c8eb.ctex"]
+source_file="res://enemy/enemy_god_angry/man_woman.png"
+dest_files=["res://.godot/imported/man_woman.png-1176aa442d2e22e1ca78f9717d31d6a9.ctex"]
 
 [params]
 

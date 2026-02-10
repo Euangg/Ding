@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://y5gn0yborfms"]
+[gd_scene format=3 uid="uid://y5gn0yborfms"]
 
 [ext_resource type="Script" uid="uid://bvtmgar5tiurx" path="res://ui/play/hud/hud_player_state.gd" id="1_0ou0w"]
 [ext_resource type="Texture2D" uid="uid://b3uewmuj26pgw" path="res://ui/play/hud/HUD.png" id="1_frhob"]
@@ -29,7 +29,7 @@ region = Rect2(308, 135, 56, 2)
 atlas = ExtResource("1_frhob")
 region = Rect2(308, 39, 56, 2)
 
-[node name="HudPlayerState" type="Control"]
+[node name="HudPlayerState" type="Control" unique_id=882925033]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -39,12 +39,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0ou0w")
 
-[node name="StateBell" type="Control" parent="."]
+[node name="StateBell" type="Control" parent="." unique_id=1883791695]
 unique_name_in_owner = true
 anchors_preset = 0
 scale = Vector2(4, 4)
 
-[node name="BarBack" type="TextureProgressBar" parent="StateBell"]
+[node name="BarBack" type="TextureProgressBar" parent="StateBell" unique_id=287348707]
 layout_mode = 0
 offset_left = 34.5
 offset_top = 2.25
@@ -56,7 +56,7 @@ texture_under = SubResource("AtlasTexture_w7h87")
 texture_progress = SubResource("AtlasTexture_vjyqo")
 texture_progress_offset = Vector2(1, 1)
 
-[node name="Bar" type="TextureProgressBar" parent="StateBell/BarBack"]
+[node name="Bar" type="TextureProgressBar" parent="StateBell/BarBack" unique_id=1585585583]
 layout_mode = 0
 offset_right = 58.0
 offset_bottom = 40.0
@@ -66,19 +66,19 @@ texture_under = SubResource("AtlasTexture_w7h87")
 texture_progress = SubResource("AtlasTexture_o2bom")
 texture_progress_offset = Vector2(1, 1)
 
-[node name="HeadPic" type="TextureRect" parent="StateBell"]
+[node name="HeadPic" type="TextureRect" parent="StateBell" unique_id=951686985]
 layout_mode = 0
 offset_right = 345.0
 offset_bottom = 417.0
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_efls7")
 
-[node name="StateLens" type="Control" parent="."]
+[node name="StateLens" type="Control" parent="." unique_id=1153038048]
 unique_name_in_owner = true
 anchors_preset = 0
 scale = Vector2(4, 4)
 
-[node name="BarBack" type="TextureProgressBar" parent="StateLens"]
+[node name="BarBack" type="TextureProgressBar" parent="StateLens" unique_id=872263480]
 layout_mode = 0
 offset_left = 46.25
 offset_top = 30.0
@@ -91,7 +91,7 @@ texture_under = SubResource("AtlasTexture_a65ym")
 texture_progress = SubResource("AtlasTexture_xjqrk")
 texture_progress_offset = Vector2(1, 1)
 
-[node name="Bar" type="TextureProgressBar" parent="StateLens/BarBack"]
+[node name="Bar" type="TextureProgressBar" parent="StateLens/BarBack" unique_id=864981710]
 layout_mode = 0
 offset_right = 58.0
 offset_bottom = 40.0
@@ -102,7 +102,7 @@ texture_under = SubResource("AtlasTexture_a65ym")
 texture_progress = SubResource("AtlasTexture_o60r3")
 texture_progress_offset = Vector2(1, 1)
 
-[node name="HeadPic" type="TextureRect" parent="StateLens"]
+[node name="HeadPic" type="TextureRect" parent="StateLens" unique_id=1743888314]
 layout_mode = 0
 offset_left = 104.25
 offset_top = 0.25000003

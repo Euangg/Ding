@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqximdivqo6fc"
-path="res://.godot/imported/float_head.png-9cbdcb83d3e1d93363550c4641e31335.ctex"
+uid="uid://yfijgqvvtdl"
+path="res://.godot/imported/teeth.png-874ace847ebac5db35bcbe913deeda3b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://enemy/pic/float_head.png"
-dest_files=["res://.godot/imported/float_head.png-9cbdcb83d3e1d93363550c4641e31335.ctex"]
+source_file="res://enemy/enemy_teeth/teeth.png"
+dest_files=["res://.godot/imported/teeth.png-874ace847ebac5db35bcbe913deeda3b.ctex"]
 
 [params]
 

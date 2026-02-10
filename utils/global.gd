@@ -1,12 +1,13 @@
 extends Node
 
-const SCENE_THEME = preload("uid://d240vmenul21x")
-const SCENE_SELECT_CHARACTER = preload("uid://cm3g7buibyi17")
-const SCENE_PLAY = preload("uid://csresjl4ikdxf")
-const SCENE_INTRO = preload("uid://vjt0qytt7k78")
-const SCENE_STAFF = preload("uid://b7fhlpox4xl8h")
-const SCENE_SETTINGS = preload("uid://bssclqieuko1d")
-const SCENE_PASS = preload("uid://bn4yccmfxnyro")
+const UI_THEME = preload("uid://d240vmenul21x")
+const UI_SELECT_CHARACTER = preload("uid://cm3g7buibyi17")
+const UI_INTERLUDE = preload("uid://cv5ijf4j77ujk")
+const UI_PLAY = preload("uid://csresjl4ikdxf")
+const UI_INTRO = preload("uid://vjt0qytt7k78")
+const UI_STAFF = preload("uid://b7fhlpox4xl8h")
+const UI_SETTINGS = preload("uid://bssclqieuko1d")
+const UI_PASS = preload("uid://bn4yccmfxnyro")
 func switch_scene(packed_scene:PackedScene):
 	get_tree().call_deferred("change_scene_to_packed",packed_scene)
 
@@ -28,9 +29,11 @@ const MUSIC_THEME = preload("uid://uli5ueqagtk4")
 func play_music(music:AudioStream):
 	%Bgm.stream=music
 	%Bgm.play()
+func stop_bgm():%Bgm.stop()
 func _on_audio_stream_player_finished() -> void:%Bgm.play()
 
 var mode_player:int
+var next_level:int
  
 var node_ammo:Node2D
 var node_effect:Node2D

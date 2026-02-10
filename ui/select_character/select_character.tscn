@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cm3g7buibyi17"]
+[gd_scene format=3 uid="uid://cm3g7buibyi17"]
 
-[ext_resource type="Texture2D" uid="uid://45prbq05qno" path="res://ui/select_character/character.png" id="1_1veuc"]
 [ext_resource type="Script" uid="uid://plsnonhqiiqd" path="res://ui/select_character/select_character.gd" id="1_ypcwn"]
+[ext_resource type="Texture2D" uid="uid://dbcmx6c4giuv1" path="res://ui/select_character/character_new.png" id="2_ypcwn"]
 
-[node name="SelectCharacter" type="Control"]
+[node name="SelectCharacter" type="Control" unique_id=388113765]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ypcwn")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=161070766]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,7 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.07450981, 0.05490196, 0.08627451, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=515199297]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,27 +30,29 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="ButtonBell" type="Button" parent="ColorRect/VBoxContainer"]
+[node name="ButtonBell" type="Button" parent="ColorRect/VBoxContainer" unique_id=1329859365]
 custom_minimum_size = Vector2(0, 580)
 layout_mode = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="ColorRect/VBoxContainer/ButtonBell"]
-position = Vector2(0, -41)
-texture = ExtResource("1_1veuc")
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect/VBoxContainer/ButtonBell" unique_id=1564075756]
+position = Vector2(24.999998, -46)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_ypcwn")
 centered = false
 region_enabled = true
-region_rect = Rect2(44, 853, 1580, 627)
+region_rect = Rect2(62, 778, 1604, 842)
 
-[node name="ButtonLens" type="Button" parent="ColorRect/VBoxContainer"]
+[node name="ButtonLens" type="Button" parent="ColorRect/VBoxContainer" unique_id=1282647154]
 custom_minimum_size = Vector2(0, 480)
 layout_mode = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="ColorRect/VBoxContainer/ButtonLens"]
-position = Vector2(390, 0)
-texture = ExtResource("1_1veuc")
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect/VBoxContainer/ButtonLens" unique_id=75625394]
+position = Vector2(604, -98.99999)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_ypcwn")
 centered = false
 region_enabled = true
-region_rect = Rect2(158, 313, 1523, 465)
+region_rect = Rect2(102, 20, 1616, 739)
 
 [connection signal="pressed" from="ColorRect/VBoxContainer/ButtonBell" to="." method="_on_button_bell_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/ButtonLens" to="." method="_on_button_lens_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d240vmenul21x"]
+[gd_scene format=3 uid="uid://d240vmenul21x"]
 
 [ext_resource type="Script" uid="uid://1ei7ry3xb7rw" path="res://ui/theme/theme.gd" id="1_8tn0p"]
 [ext_resource type="Texture2D" uid="uid://dvh368ghy4arf" path="res://ui/theme/theme.png" id="2_ytuon"]
@@ -161,7 +161,7 @@ _data = {
 &"start": SubResource("Animation_1o4gp")
 }
 
-[node name="UiTheme" type="Control"]
+[node name="UiTheme" type="Control" unique_id=646230339]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -170,11 +170,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8tn0p")
 
-[node name="Theme" type="Sprite2D" parent="."]
+[node name="Theme" type="Sprite2D" parent="." unique_id=1554885309]
 texture = ExtResource("2_ytuon")
 centered = false
 
-[node name="ButtonSingle" type="Button" parent="Theme"]
+[node name="ButtonSingle" type="Button" parent="Theme" unique_id=1537118872]
 unique_name_in_owner = true
 anchors_preset = 8
 anchor_left = 0.5
@@ -190,7 +190,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 80
 text = "单人游戏"
 
-[node name="ButtonDouble" type="Button" parent="Theme"]
+[node name="ButtonDouble" type="Button" parent="Theme" unique_id=2133237309]
 unique_name_in_owner = true
 anchors_preset = 8
 anchor_left = 0.5
@@ -206,7 +206,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 80
 text = "双人游戏"
 
-[node name="ButtonSetting" type="Button" parent="Theme"]
+[node name="ButtonSetting" type="Button" parent="Theme" unique_id=2005746429]
 unique_name_in_owner = true
 anchors_preset = 8
 anchor_left = 0.5
@@ -222,7 +222,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 80
 text = "游戏设置"
 
-[node name="ButtonStaff" type="Button" parent="Theme"]
+[node name="ButtonStaff" type="Button" parent="Theme" unique_id=786810035]
 unique_name_in_owner = true
 anchors_preset = 8
 anchor_left = 0.5
@@ -238,7 +238,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 80
 text = "制作人员"
 
-[node name="ButtonQuit" type="Button" parent="Theme"]
+[node name="ButtonQuit" type="Button" parent="Theme" unique_id=802982675]
 unique_name_in_owner = true
 anchors_preset = 8
 anchor_left = 0.5
@@ -254,18 +254,16 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 80
 text = "退出游戏"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_qt18x")
-}
-autoplay = "start"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1878123140]
+libraries/ = SubResource("AnimationLibrary_qt18x")
+autoplay = &"start"
 
-[node name="Title" type="Sprite2D" parent="."]
+[node name="Title" type="Sprite2D" parent="." unique_id=455438914]
 position = Vector2(-396, 168)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_25bbm")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=549108515]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -274,5 +272,5 @@ offset_top = -111.0
 offset_right = 200.0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 80
-text = "v0.11"
+text = "v0.13"
 vertical_alignment = 2
