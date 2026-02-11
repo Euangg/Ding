@@ -327,6 +327,14 @@ initial_velocity_max = 50.0
 angular_velocity_min = 500.0
 angular_velocity_max = 1000.0
 
+[node name="Aim" type="ColorRect" parent="HitBox" unique_id=2027525112]
+offset_left = 255.0
+offset_top = -4.0
+offset_right = 295.0
+offset_bottom = 2.0
+pivot_offset = Vector2(-256, 3)
+color = Color(1, 1, 0.54004896, 1)
+
 [node name="HurtBox" type="Area2D" parent="." unique_id=1399524084]
 collision_layer = 8
 collision_mask = 0

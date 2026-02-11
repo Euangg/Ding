@@ -42,6 +42,14 @@ centered = false
 region_enabled = true
 region_rect = Rect2(62, 778, 1604, 842)
 
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/ButtonBell/Sprite2D" unique_id=965317003]
+offset_left = 436.24997
+offset_top = 438.74997
+offset_right = 1436.25
+offset_bottom = 549.75
+theme_override_font_sizes/font_size = 100
+text = "古老家族传承的驱魔人"
+
 [node name="ButtonLens" type="Button" parent="ColorRect/VBoxContainer" unique_id=1282647154]
 custom_minimum_size = Vector2(0, 480)
 layout_mode = 2
@@ -53,6 +61,14 @@ texture = ExtResource("2_ypcwn")
 centered = false
 region_enabled = true
 region_rect = Rect2(102, 20, 1616, 739)
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/ButtonLens/Sprite2D" unique_id=1834453549]
+offset_left = 179.99997
+offset_top = 424.99994
+offset_right = 1180.0
+offset_bottom = 536.0
+theme_override_font_sizes/font_size = 100
+text = "偷玩爷爷猎枪的小学生"
 
 [connection signal="pressed" from="ColorRect/VBoxContainer/ButtonBell" to="." method="_on_button_bell_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/ButtonLens" to="." method="_on_button_lens_pressed"]

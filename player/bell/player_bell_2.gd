@@ -10,6 +10,8 @@ var state:State=State.NULL
 
 func _physics_process(delta: float) -> void:
 	var vector_input=Input.get_vector("a","d","w","s")
+	if(Input.is_action_just_pressed("v")):%HitBox.rotation-=PI/4
+	if(Input.is_action_just_pressed("b")):%HitBox.rotation+=PI/4
 	#if vector_input.is_zero_approx():pass
 	#else:%HitBox.rotation=vector_input.angle()
 	
@@ -58,8 +60,7 @@ func _physics_process(delta: float) -> void:
 			if vector_input.is_zero_approx():%AnimationPlayerAtkWalk.pause()
 			else:%AnimationPlayerAtkWalk.play()
 			velocity=vector_input.normalized()*speed
-			if(Input.is_action_just_pressed("v")):%HitBox.rotation-=PI/4
-			if(Input.is_action_just_pressed("b")):%HitBox.rotation+=PI/4
+
 			if %HitBox.monitoring:
 				var arr_enemy:Array[Area2D]=%HitBox.get_overlapping_areas()
 				for a in arr_enemy:
